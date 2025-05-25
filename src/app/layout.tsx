@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
+import MenuBar from "@/components/MenuBar";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body className={`${lufgaFonts.className} antialiased`}>
         <Header />
         {children}
+        <MenuBar />
       </body>
     </html>
   );

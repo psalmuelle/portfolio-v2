@@ -5,7 +5,7 @@ import Icon from "./Icons";
 
 export default function Header() {
   return (
-    <header className='w-full max-w-7xl mx-auto flex justify-between items-center p-10 md:p-16 px-6 sm:px-10 lg:px-16'>
+    <header className='w-full max-w-7xl mx-auto flex justify-between items-center p-10 md:p-14 px-6 sm:px-10 lg:px-14'>
       <Link href='/'>
         <Image src={logoImg} alt='logo' width={32} height={32} />
       </Link>

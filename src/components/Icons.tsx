@@ -4,12 +4,15 @@ import {
   GithubLogoIcon,
   LinkedinLogoIcon,
   XLogoIcon,
+  CaretRightIcon,
 } from "@phosphor-icons/react";
 
 const iconMap = {
   linkedinLogo: LinkedinLogoIcon,
   githubLogo: GithubLogoIcon,
   xLogo: XLogoIcon,
+  caretRight: CaretRightIcon,
+  // Add more icons as needed
 } as const;
 
 type IconName = keyof typeof iconMap;

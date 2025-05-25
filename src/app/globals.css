@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffaf3;
+  --background: #e9efec0c;
   --foreground: #1c1c1c;
+}
+
+@font-face {
+  font-family: "ClashDisplay";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../public/fonts/ClashDisplay-Bold.woff2") format("woff2");
 }
 
 @layer base {
@@ -18,9 +25,25 @@
     scroll-behavior: smooth;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  ::selection {
+    background: #16423c;
+    color: white;
+  }
+  ::-moz-selection {
+    background: #16423c;
+    color: white;
   }
 }
 
@@ -29,4 +52,9 @@
   --color-primary-300: #c4dad2;
   --color-primary-600: #6a9c89;
   --color-primary-900: #16423c;
+}
+
+.font-clash {
+  font-family: "ClashDisplay", sans-serif;
+  font-weight: 700;
 }
