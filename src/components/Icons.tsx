@@ -1,11 +1,11 @@
-"use client";
-import { ComponentProps, JSX } from "react";
+'use client';
+import { ComponentProps, JSX } from 'react';
 import {
   GithubLogoIcon,
   LinkedinLogoIcon,
   XLogoIcon,
   CaretRightIcon,
-} from "@phosphor-icons/react";
+} from '@phosphor-icons/react';
 
 const iconMap = {
   linkedinLogo: LinkedinLogoIcon,
@@ -17,7 +17,7 @@ const iconMap = {
 
 type IconName = keyof typeof iconMap;
 type IconComponent = (
-  props: ComponentProps<typeof LinkedinLogoIcon>
+  props: ComponentProps<typeof LinkedinLogoIcon>,
 ) => JSX.Element;
 type IconProps = { name: IconName } & ComponentProps<IconComponent>;
 
@@ -29,5 +29,5 @@ export default function Icon({ name, ...props }: IconProps) {
     return null;
   }
 
-  return <IconComponent color={props.color || "#1c1c1c"} {...props} />;
+  return <IconComponent color={props.color || '#1c1c1c'} {...props} />;
 }

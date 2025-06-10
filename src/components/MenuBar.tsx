@@ -1,44 +1,48 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function MenuBar() {
   const pathname = usePathname();
 
   return (
-    <nav className='fixed left-1/2 bottom-[8%] transform -translate-x-1/2 w-fit bg-white p-1.5 rounded-xl text-sm flex items-center justify-center text-neutral-600 drop-shadow-xl'>
+    <nav className="fixed bottom-[8%] left-1/2 flex w-fit -translate-x-1/2 transform items-center justify-center rounded-xl bg-white p-1.5 text-sm text-neutral-600 drop-shadow-xl">
       <Link
-        className={`py-2 px-4 rounded-lg ${
-          pathname === "/" ? "bg-primary-300 text-black" : ""
+        className={`rounded-lg px-4 py-2 md:text-lg ${
+          pathname === '/' ? 'bg-primary-300 text-black' : ''
         }`}
-        href={"/"}>
+        href={'/'}
+      >
         Home
       </Link>
 
       <Link
-        className={`py-2 px-4 rounded-lg ${
-          pathname === "/projects" ? "bg-primary-300 text-black" : ""
+        className={`rounded-lg px-4 py-2 ${
+          pathname === '/projects' ? 'bg-primary-300 text-black' : ''
         }`}
-        href={"/projects"}>
+        href={'/projects'}
+      >
         Projects
       </Link>
 
       <Link
-        className={`py-2 px-4 rounded-lg ${
-          pathname === "/notes" ? "bg-primary-300 text-black" : ""
+        className={`rounded-lg px-4 py-2 ${
+          pathname === '/notes' ? 'bg-primary-300 text-black' : ''
         }`}
-        href={"/notes"}>
+        href={'/notes'}
+      >
         Notes
       </Link>
 
       <Link
-        className={`text-lg py-1 px-5 rounded-lg ${
-          pathname === "/" ? "bg-primary-300 text-black" : ""
+        className={`rounded-lg px-5 py-1 text-lg ${
+          pathname === '/' ? 'bg-primary-300 text-black' : ''
         }`}
-        href='/'>
+        href="/"
+      >
         🎯
-        <span className='sr-only'>X</span>
+        <span className="sr-only">X</span>
       </Link>
     </nav>
   );

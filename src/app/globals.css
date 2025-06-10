@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #e9efec0c;
@@ -6,10 +6,10 @@
 }
 
 @font-face {
-  font-family: "ClashDisplay";
+  font-family: 'ClashDisplay';
   font-style: normal;
   font-weight: 700;
-  src: url("../../public/fonts/ClashDisplay-Bold.woff2") format("woff2");
+  src: url('../../public/fonts/ClashDisplay-Bold.woff2') format('woff2');
 }
 
 @layer base {
@@ -38,11 +38,11 @@
   }
 
   ::selection {
-    background: #16423c;
+    background: #16423ccb;
     color: white;
   }
   ::-moz-selection {
-    background: #16423c;
+    background: #16423ccb;
     color: white;
   }
 }
@@ -55,6 +55,6 @@
 }
 
 .font-clash {
-  font-family: "ClashDisplay", sans-serif;
+  font-family: 'ClashDisplay', sans-serif;
   font-weight: 700;
 }
