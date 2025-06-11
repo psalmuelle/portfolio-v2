@@ -1,28 +1,41 @@
 'use client';
-
-import { useState } from 'react';
-import Icon from '../Icons';
+import { useState, useEffect } from 'react';
+import ProjectCard from '../ProjectCard';
+import Section from './Section';
+import { supabase } from '@/lib/supabase/client';
 
 export default function ProjectSection() {
-  const [toggleSection, setToggleSection] = useState(false);
+  const [projects, setProjects] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const { data, error } = await supabase.from('projects').select('*');
+      if (!error) {
+        setProjects(data);
+      }
+    };
+    fetchProjects();
+  }, []);
   return (
-    <section className="border-primary-900 border-y py-6 md:py-8">
-      <h2
-        onClick={() => setToggleSection(!toggleSection)}
-        className="flex cursor-pointer items-center gap-1 py-0.5 text-xl font-medium max-sm:text-lg"
-      >
-        <Icon
-          name="caretRight"
-          color="#16423c"
-          weight="bold"
-          className={`transition-transform duration-300 ${
-            toggleSection ? 'rotate-90' : ''
-          }`}
-          size={20}
-        />
-        <span>Projects: Web</span>
-      </h2>
-      <div className={``}></div>
-    </section>
+    <>
+      {/* Web Projects */}
+      <Section
+        title="Projects: Web"
+        children={
+          <>
+            <ProjectCard />
+          </>
+        }
+      />
+      {/* Mobile Projects */}
+      <Section
+        title="Projects: Mobile"
+        children={
+          <>
+            <ProjectCard />
+          </>
+        }
+      />
+    </>
   );
 }

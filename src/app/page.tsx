@@ -1,3 +1,4 @@
+import WorkExperienceSection from '@/components/home/ExperienceSection';
 import ProjectSection from '@/components/home/ProjectSection';
 import Link from 'next/link';
 
@@ -21,9 +22,15 @@ export default function Home() {
           visually sharp and easy to use.
         </p>
       </hgroup>
-      <div className="mt-10 md:mt-12">
+      <hr className="text-primary-900 mt-10 md:mt-12" />
+      <div>
         <ProjectSection />
       </div>
+      <div>
+        <WorkExperienceSection />
+      </div>
+
+      <div className="mt-40"></div>
     </div>
   );
 }
