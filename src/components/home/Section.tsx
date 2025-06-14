@@ -17,7 +17,7 @@ export default function Section({ title, children }: SectionProps) {
     setHeight(toggleSection ? `${contentRef.current.scrollHeight}px` : '0px');
   }, [toggleSection, contentRef]);
   return (
-    <section className="border-primary-900 border-b pt-8 md:pt-10">
+    <section className="border-primary-900 border-b py-6 md:py-8">
       <h2
         onClick={() => setToggleSection(!toggleSection)}
         className="flex cursor-pointer items-center gap-1 py-0.5 text-lg font-medium sm:text-xl"
@@ -36,7 +36,7 @@ export default function Section({ title, children }: SectionProps) {
       <div
         ref={contentRef}
         style={{ maxHeight: height }}
-        className={`overflow-hidden py-4 transition-all duration-250 ease-linear md:pb-6`}
+        className={`overflow-hidden transition-all duration-250 ease-linear`}
       >
         {children}
       </div>

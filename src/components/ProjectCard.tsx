@@ -1,15 +1,25 @@
+import Image from 'next/image';
+import Tag from './Tag';
+
 export default function ProjectCard() {
   return (
-    <div>
-      <div className="rounded-lg bg-white p-6 shadow-md">
-        <h2 className="mb-4 text-2xl font-bold">Project Title</h2>
-        <p className="mb-4 text-gray-700">
-          A brief description of the project goes here. It should be concise and
-          informative.
-        </p>
-        <a href="#" className="text-blue-500 hover:underline">
-          View Project
-        </a>
+    <div className="bg-primary-100 w-full cursor-pointer rounded-xl transition-transform duration-300 hover:scale-102 hover:shadow-lg">
+      <Image
+        src="https://jzejbfklabcstgfiwixz.supabase.co/storage/v1/object/public/project-storage//portfolio.png"
+        alt="Project Image"
+        width={400}
+        height={300}
+        className="mb-4 aspect-video w-full rounded-t-xl object-cover"
+      />
+      <div className="p-4">
+        <h2 className="w-full text-lg font-medium">
+          MovieFlix - Online Movies & TV Shows Application
+        </h2>
+        <div className="mt-4 flex items-center gap-2">
+          {['Next.js', 'Supabase'].map((tag, index) => (
+            <Tag key={index}>{tag}</Tag>
+          ))}
+        </div>
       </div>
     </div>
   );
