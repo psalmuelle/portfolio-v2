@@ -5,6 +5,7 @@ import {
   LinkedinLogoIcon,
   XLogoIcon,
   CaretRightIcon,
+  ArrowUpRightIcon,
 } from '@phosphor-icons/react';
 
 const iconMap = {
@@ -12,6 +13,7 @@ const iconMap = {
   githubLogo: GithubLogoIcon,
   xLogo: XLogoIcon,
   caretRight: CaretRightIcon,
+  arrowUpRight: ArrowUpRightIcon,
   // Add more icons as needed
 } as const;
 
