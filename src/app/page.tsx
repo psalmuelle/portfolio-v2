@@ -1,3 +1,4 @@
+import ContactSection from '@/components/home/ContactSection';
 import WorkExperienceSection from '@/components/home/ExperienceSection';
 import ProjectSection from '@/components/home/ProjectSection';
 import Link from 'next/link';
@@ -28,6 +29,9 @@ export default function Home() {
       </div>
       <div>
         <WorkExperienceSection />
+      </div>
+      <div>
+        <ContactSection />
       </div>
 
       <div className="mt-40"></div>
