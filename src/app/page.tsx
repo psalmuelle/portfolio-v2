@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+    <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
       <hgroup className="text-center">
         <h1 className="font-clash text-6xl tracking-wider max-sm:text-4xl">
           Erinle Samuel
@@ -34,7 +34,7 @@ export default function Home() {
         <ContactSection />
       </div>
 
-      <div className="mt-40"></div>
+      <div className="mt-40" />
     </div>
   );
 }

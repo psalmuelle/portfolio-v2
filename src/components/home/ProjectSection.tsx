@@ -2,20 +2,16 @@
 import { useState, useEffect } from 'react';
 import ProjectCard from '../ProjectCard';
 import Section from './Section';
-import { supabase } from '@/lib/supabase/client';
+import { useQuery } from '@apollo/client';
+import { GET_PROJECTS } from '@/lib/graphql/queries';
 
 export default function ProjectSection() {
   const [projects, setProjects] = useState<any[]>([]);
+  const {data, loading, error} = useQuery(GET_PROJECTS)
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      const { data, error } = await supabase.from('projects').select('*');
-      if (!error) {
-        setProjects(data);
-      }
-    };
-    fetchProjects();
-  }, []);
+  console.log('Projects Data:', data);
+
+  useEffect(() => {}, []);
   return (
     <>
       {/* Web Projects */}
@@ -23,7 +19,7 @@ export default function ProjectSection() {
         title="Projects: Web"
         children={
           <div className="mt-6 md:mt-8">
-            <div className="grid grid-cols-1 gap-6 px-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               <ProjectCard />
               <ProjectCard />
               <ProjectCard />
@@ -47,7 +43,7 @@ export default function ProjectSection() {
         title="Projects: Mobile"
         children={
           <div className="mt-6 md:mt-8">
-            <div className="grid grid-cols-1 gap-6 px-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
               <ProjectCard />
               <ProjectCard />
               <ProjectCard />
