@@ -36,12 +36,12 @@ export default function MenuBar() {
       </Link>
 
       <Link
-        className={`flex w-9 items-center justify-center rounded-full px-1 py-1 text-lg ${
-          pathname === '/rough-thoughts' ? 'bg-primary-300 text-black' : ''
+        className={`flex w-10 items-center justify-center rounded-full px-2 py-1.5 text-xl ${
+          pathname === '/demos' ? 'bg-primary-300 text-black' : ''
         }`}
-        href="/rough-thoughts"
+        href="/demos"
       >
-        🎯
+        🎥
         <span className="sr-only">Hobbies</span>
       </Link>
     </nav>

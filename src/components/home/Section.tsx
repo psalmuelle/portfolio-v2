@@ -26,7 +26,7 @@ export default function Section({ title, children }: SectionProps) {
           name="caretRight"
           color="#1c1c1c"
           weight="bold"
-          className={`transition-transform duration-300 ${
+          className={`transition-transform duration-350 ${
             toggleSection ? 'rotate-90' : ''
           }`}
           size={20}
@@ -36,7 +36,7 @@ export default function Section({ title, children }: SectionProps) {
       <div
         ref={contentRef}
         style={{ maxHeight: height }}
-        className={`overflow-hidden transition-all duration-250 ease-linear`}
+        className={`overflow-hidden transition-all duration-350 ease-linear`}
       >
         {children}
       </div>

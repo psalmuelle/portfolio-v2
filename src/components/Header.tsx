@@ -16,7 +16,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="hover:bg-primary-100 rounded-full p-2"
         >
-          <Icon name="linkedinLogo" size={24} weight="fill" />
+          <Icon name="linkedinLogo" size={24} weight="fill" color="#1c1c1c" />
           <span className="sr-only">LinkedIn</span>
         </Link>
 
@@ -26,7 +26,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="hover:bg-primary-100 rounded-full p-2"
         >
-          <Icon name="githubLogo" size={24} weight="fill" />
+          <Icon name="githubLogo" size={24} weight="fill" color="#1c1c1c" />
           <span className="sr-only">Github</span>
         </Link>
 
@@ -36,7 +36,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="hover:bg-primary-100 rounded-full p-2"
         >
-          <Icon name="xLogo" size={24} weight="fill" />
+          <Icon name="xLogo" size={24} weight="fill" color="#1c1c1c" />
           <span className="sr-only">X</span>
         </Link>
       </nav>
