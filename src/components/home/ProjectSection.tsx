@@ -11,43 +11,49 @@ import ProjectDetailsModal from '../ProjectDetails';
 const sampleProjects = [
   {
     id: '1',
-    title: 'Project One',
-    description: 'This is a description for project one.',
+    title: 'MovieFlex - A Movie Recommendation App',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?',
     img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
     tags: ['Web', 'React'],
   },
   {
     id: '2',
-    title: 'Project Two',
-    description: 'This is a description for project two.',
+    title: 'MovieFlex - A Movie Recommendation App',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?',
     img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
     tags: ['Mobile', 'Flutter'],
   },
   {
     id: '3',
-    title: 'Project Three',
-    description: 'This is a description for project three.',
+    title: 'MovieFlex - A Movie Recommendation App',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?',
     img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
     tags: ['Web', 'Next.js'],
   },
   {
     id: '4',
-    title: 'Project Four',
-    description: 'This is a description for project four.',
+    title: 'MovieFlex - A Movie Recommendation App',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?',
     img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
     tags: ['Mobile', 'React Native'],
   },
   {
     id: '5',
-    title: 'Project Five',
-    description: 'This is a description for project five.',
+    title: 'MovieFlex - A Movie Recommendation App',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?',
     img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
     tags: ['Web', 'Gatsby'],
   },
   {
     id: '6',
-    title: 'Project Six',
-    description: 'This is a description for project six.',
+    title: 'MovieFlex - A Movie Recommendation App',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?',
     img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
     tags: ['Mobile', 'Swift'],
   },

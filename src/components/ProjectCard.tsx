@@ -26,7 +26,7 @@ export default function ProjectCard({
         height={400}
         className="aspect-square w-full rounded-xl object-cover"
       />
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-[#1c1c1c] via-[#1c1c1c]/85 to-transparent p-4">
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-[#1c1c1c] via-[#1c1c1c]/80 to-transparent p-4">
         <div className="flex h-full w-full flex-col justify-end gap-2">
           <h2 className="font-clash line-clamp-2 text-lg font-bold text-white">
             {title}
@@ -43,6 +43,7 @@ export default function ProjectCard({
       <div className="absolute top-4 right-4">
         <button
           onClick={onClick}
+          aria-label="Open Project Details"
           className="group relative inline-flex h-12 w-12 cursor-pointer flex-col items-center justify-center overflow-hidden rounded-full bg-white/90"
         >
           <span className="bg-primary-300 absolute h-0 w-0 rounded-full transition-all duration-350 ease-out group-hover:h-12 group-hover:w-12 group-active:h-12 group-active:w-12"></span>

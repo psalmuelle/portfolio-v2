@@ -34,7 +34,7 @@ export default function Home() {
         <ContactSection />
       </div>
 
-      <div className="mt-40" />
+      <div className="mt-36" />
     </div>
   );
 }
