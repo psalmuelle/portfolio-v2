@@ -4,10 +4,68 @@ import ProjectCard from '../ProjectCard';
 import Section from './Section';
 import { useQuery } from '@apollo/client';
 import { GET_PROJECTS } from '@/lib/graphql/queries';
+import Modal from '../Modal';
+import Image from 'next/image';
+import ProjectDetailsModal from '../ProjectDetails';
+
+const sampleProjects = [
+  {
+    id: '1',
+    title: 'Project One',
+    description: 'This is a description for project one.',
+    img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
+    tags: ['Web', 'React'],
+  },
+  {
+    id: '2',
+    title: 'Project Two',
+    description: 'This is a description for project two.',
+    img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
+    tags: ['Mobile', 'Flutter'],
+  },
+  {
+    id: '3',
+    title: 'Project Three',
+    description: 'This is a description for project three.',
+    img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
+    tags: ['Web', 'Next.js'],
+  },
+  {
+    id: '4',
+    title: 'Project Four',
+    description: 'This is a description for project four.',
+    img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
+    tags: ['Mobile', 'React Native'],
+  },
+  {
+    id: '5',
+    title: 'Project Five',
+    description: 'This is a description for project five.',
+    img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
+    tags: ['Web', 'Gatsby'],
+  },
+  {
+    id: '6',
+    title: 'Project Six',
+    description: 'This is a description for project six.',
+    img: 'https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png',
+    tags: ['Mobile', 'Swift'],
+  },
+];
 
 export default function ProjectSection() {
   const [projects, setProjects] = useState<any[]>([]);
-  const {data, loading, error} = useQuery(GET_PROJECTS)
+  const { data, loading, error } = useQuery(GET_PROJECTS);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState();
+
+  const handleOpenProjectDetails = (projectId: string) => {
+    setIsOpen(true);
+  };
+
+  const handleCloseProjectDetails = () => {
+    setIsOpen(false);
+  };
 
   console.log('Projects Data:', data);
 
@@ -19,13 +77,17 @@ export default function ProjectSection() {
         title="Projects: Web"
         children={
           <div className="mt-6 md:mt-8">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 px-1.5 lg:grid-cols-3 lg:gap-8">
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
+            <div className="grid grid-cols-1 gap-6 px-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+              {sampleProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  img={project.img}
+                  tags={project.tags}
+                  onClick={() => handleOpenProjectDetails(project.id)}
+                />
+              ))}
             </div>
             <div className="mt-4 text-center md:mt-6 md:text-left">
               <a
@@ -44,9 +106,16 @@ export default function ProjectSection() {
         children={
           <div className="mt-6 md:mt-8">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-              <ProjectCard />
-              <ProjectCard />
-              <ProjectCard />
+              {sampleProjects.slice(3, 6).map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  img={project.img}
+                  tags={project.tags}
+                  onClick={() => handleOpenProjectDetails(project.id)}
+                />
+              ))}
             </div>
             <div className="mt-4 text-center md:mt-6 md:text-left">
               <a
@@ -58,6 +127,12 @@ export default function ProjectSection() {
             </div>
           </div>
         }
+      />
+      <ProjectDetailsModal
+        isOpen={isOpen}
+        onClose={handleCloseProjectDetails}
+        imgDesc="An example of this"
+        imgSrc="https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png"
       />
     </>
   );

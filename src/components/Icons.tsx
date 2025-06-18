@@ -5,7 +5,8 @@ import {
   LinkedinLogoIcon,
   XLogoIcon,
   CaretRightIcon,
-  ArrowUpRightIcon,
+  XIcon,
+  ArrowSquareOutIcon
 } from '@phosphor-icons/react';
 
 const iconMap = {
@@ -13,7 +14,8 @@ const iconMap = {
   githubLogo: GithubLogoIcon,
   xLogo: XLogoIcon,
   caretRight: CaretRightIcon,
-  arrowUpRight: ArrowUpRightIcon,
+  x: XIcon,
+  arrowOut: ArrowSquareOutIcon
   // Add more icons as needed
 } as const;
 
@@ -31,5 +33,5 @@ export default function Icon({ name, ...props }: IconProps) {
     return null;
   }
 
-  return <IconComponent color={props.color || '#1c1c1c'} {...props} />;
+  return <IconComponent color={props.color} {...props} />;
 }

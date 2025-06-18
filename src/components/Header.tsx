@@ -3,7 +3,7 @@ import Icon from './Icons';
 
 export default function Header() {
   return (
-    <header className="mx-auto flex w-full max-w-6xl items-center justify-between p-10 px-6 sm:px-10 md:p-14 lg:px-14">
+    <header className="mx-auto flex w-full max-w-7xl items-center justify-between p-10 px-6 sm:px-10 md:p-14 lg:px-14">
       <Link href="/" className="text-3xl">
         💼
         <span className="sr-only">Erinle Samuel</span>

@@ -7,7 +7,7 @@ export default function MenuBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-[8%] left-1/2 flex w-fit -translate-x-1/2 transform items-center justify-center rounded-xl bg-white p-1.5 text-sm text-neutral-600 drop-shadow-xl">
+    <nav className="fixed bottom-[8%] left-1/2 flex w-fit -translate-x-1/2 transform items-center justify-center rounded-xl bg-white p-1.5 text-sm text-neutral-600 drop-shadow-xl z-10">
       <Link
         className={`rounded-lg px-4 py-2 ${
           pathname === '/' ? 'bg-primary-300 text-black' : ''

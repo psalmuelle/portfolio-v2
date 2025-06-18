@@ -12,6 +12,7 @@
     "@apollo/client": "^3.13.8",
     "@phosphor-icons/react": "^2.1.10",
     "graphql": "^16.11.0",
+    "motion": "^12.18.1",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
