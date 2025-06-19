@@ -23,7 +23,7 @@ export default function ProjectDetailsModal({
         MovieFlex- A Movie Recommendation App
       </h2>
       <div className="max-h-[70svh] overflow-y-auto py-6">
-        <YouTubeEmbed videoId="6HUbKCOzguU?si=lJ9U2FaDZdHMowYb" />
+        <YouTubeEmbed videoId="6HUbKCOzguU" />
         <div className="mt-4 flex gap-4 text-sm md:gap-6">
           <button className="hover:bg-primary-100 active:bg-primary-100 border-primary-600 flex cursor-pointer items-start rounded-lg border bg-white px-3 py-1.5 font-medium transition-all duration-350 ease-out hover:shadow">
             <Icon name="arrowOut" size={18} className="mr-1" />
