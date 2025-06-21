@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Icon from './Icons';
+import Image from 'next/image';
 
 export default function YouTubeEmbed({ videoId }: { videoId: string }) {
   const [isPlayerActive, setIsPlayerActive] = useState(false);
@@ -23,13 +24,18 @@ export default function YouTubeEmbed({ videoId }: { videoId: string }) {
         />
       ) : (
         <>
-          <img
+          <Image
+            width={1280}
+            height={720}
             src={thumbnail}
             alt="YouTube video thumbnail"
             className="h-full w-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div
+            aria-label="Play"
+            className="absolute inset-0 flex items-center justify-center"
+          >
             <div className="relative flex items-center justify-center">
               <Icon
                 name="youtubeLogo"

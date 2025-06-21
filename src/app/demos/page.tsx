@@ -1,4 +1,9 @@
 import YouTubeEmbed from '@/components/YoutubeEmbed';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Demos',
+};
 
 export default function DemosPage() {
   return (
@@ -15,9 +20,9 @@ export default function DemosPage() {
       </hgroup>
 
       <div className="mt-10 mb-36 grid grid-cols-1 gap-6 md:mt-14 lg:grid-cols-2">
-        <YouTubeEmbed videoId="agMrewRJTow" />
-        <YouTubeEmbed videoId="agMrewRJTow" />
-        <YouTubeEmbed videoId="agMrewRJTow" />
+        <YouTubeEmbed videoId="6HUbKCOzguU" />
+        <YouTubeEmbed videoId="6HUbKCOzguU" />
+        <YouTubeEmbed videoId="6HUbKCOzguU" />
         <YouTubeEmbed videoId="6HUbKCOzguU" />
         <YouTubeEmbed videoId="6HUbKCOzguU" />
         <YouTubeEmbed videoId="6HUbKCOzguU" />

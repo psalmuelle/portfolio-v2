@@ -1,4 +1,9 @@
 import NoteCard from '@/components/notes/NoteCard';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Notes',
+};
 
 export default function NotesPage() {
   return (

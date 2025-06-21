@@ -7,7 +7,8 @@ import {
   CaretRightIcon,
   XIcon,
   ArrowSquareOutIcon,
-  YoutubeLogoIcon
+  YoutubeLogoIcon,
+  DotIcon,
 } from '@phosphor-icons/react';
 
 const iconMap = {
@@ -17,7 +18,8 @@ const iconMap = {
   caretRight: CaretRightIcon,
   x: XIcon,
   arrowOut: ArrowSquareOutIcon,
-  youtubeLogo: YoutubeLogoIcon
+  youtubeLogo: YoutubeLogoIcon,
+  dot: DotIcon,
   // Add more icons as needed
 } as const;
 

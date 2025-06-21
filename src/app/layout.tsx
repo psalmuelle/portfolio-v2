@@ -46,7 +46,10 @@ const lufgaFonts = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Erinle Sam',
+  title: {
+    default: 'Erinle Sam - Frontend Engineer',
+    template: '%s | Erinle Sam',
+  },
   description: 'Frontend Engineer | React.js & React Native',
 };
 
