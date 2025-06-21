@@ -65,8 +65,9 @@ export default function ProjectSection() {
   const [isOpen, setIsOpen] = useState(false);
   // const [activeProject, setActiveProject] = useState();
 
-  const handleOpenProjectDetails = (_projectId: string) => {
+  const handleOpenProjectDetails = (projectId: string) => {
     setIsOpen(true);
+    console.log(projectId);
   };
 
   const handleCloseProjectDetails = () => {
