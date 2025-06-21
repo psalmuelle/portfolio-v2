@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import Modal from './Modal';
 import Icon from './Icons';
 import Tag from './Tag';
@@ -13,8 +13,6 @@ type ProjectDetailsProps = {
 
 export default function ProjectDetailsModal({
   isOpen,
-  imgSrc,
-  imgDesc,
   onClose,
 }: ProjectDetailsProps) {
   return (

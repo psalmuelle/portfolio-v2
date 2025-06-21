@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import ProjectCard from '../ProjectCard';
 import Section from './Section';
-import { useQuery } from '@apollo/client';
-import { GET_PROJECTS } from '@/lib/graphql/queries';
+// import { useQuery } from '@apollo/client';
+// import { GET_PROJECTS } from '@/lib/graphql/queries';
 // import Modal from '../Modal';
 // import Image from 'next/image';
 import ProjectDetailsModal from '../ProjectDetails';
@@ -60,12 +60,12 @@ const sampleProjects = [
 ];
 
 export default function ProjectSection() {
-  const [projects, setProjects] = useState<any[]>([]);
-  const { data, loading, error } = useQuery(GET_PROJECTS);
+  // const [projects, setProjects] = useState<any[]>([]);
+  // const { data, loading, error } = useQuery(GET_PROJECTS);
   const [isOpen, setIsOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState();
+  // const [activeProject, setActiveProject] = useState();
 
-  const handleOpenProjectDetails = (projectId: string) => {
+  const handleOpenProjectDetails = (_projectId: string) => {
     setIsOpen(true);
   };
 
@@ -73,67 +73,63 @@ export default function ProjectSection() {
     setIsOpen(false);
   };
 
-  console.log('Projects Data:', data);
+  // console.log('Projects Data:', data);
 
   useEffect(() => {}, []);
   return (
     <>
       {/* Web Projects */}
-      <Section
-        title="Projects: Web"
-        children={
-          <div className="mt-6 md:mt-8">
-            <div className="grid grid-cols-1 gap-6 px-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-              {sampleProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  title={project.title}
-                  description={project.description}
-                  img={project.img}
-                  tags={project.tags}
-                  onClick={() => handleOpenProjectDetails(project.id)}
-                />
-              ))}
-            </div>
-            <div className="mt-4 text-center md:mt-6 md:text-left">
-              <a
-                href="/projects?type=web"
-                className="hover:text-primary-900/90 inline-block rounded-lg font-medium underline underline-offset-4 transition-colors duration-200 md:text-lg"
-              >
-                See More
-              </a>
-            </div>
+      <Section title="Projects: Web">
+        <div className="mt-6 md:mt-8">
+          <div className="grid grid-cols-1 gap-6 px-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            {sampleProjects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                img={project.img}
+                tags={project.tags}
+                onClick={() => handleOpenProjectDetails(project.id)}
+              />
+            ))}
           </div>
-        }
-      />
+          <div className="mt-4 text-center md:mt-6 md:text-left">
+            <a
+              href="/projects?type=web"
+              className="hover:text-primary-900/90 inline-block rounded-lg font-medium underline underline-offset-4 transition-colors duration-200 md:text-lg"
+            >
+              See More
+            </a>
+          </div>
+        </div>
+      </Section>
+
       {/* Mobile Projects */}
-      <Section
-        title="Projects: Mobile"
-        children={
-          <div className="mt-6 md:mt-8">
-            <div className="grid grid-cols-1 gap-6 px-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-              {sampleProjects.slice(3, 6).map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  title={project.title}
-                  description={project.description}
-                  img={project.img}
-                  tags={project.tags}
-                  onClick={() => handleOpenProjectDetails(project.id)}
-                />
-              ))}
-            </div>
-            <div className="mt-4 text-center md:mt-6 md:text-left">
-              <a
-                href="/projects?type=mobile"
-                className="hover:text-primary-900/90 inline-block rounded-lg font-medium underline underline-offset-4 transition-colors duration-200 md:text-lg"
-              >
-                See More
-              </a>
-            </div>
+      <Section title="Projects: Mobile">
+        <div className="mt-6 md:mt-8">
+          <div className="grid grid-cols-1 gap-6 px-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+            {sampleProjects.slice(3, 6).map((project) => (
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                img={project.img}
+                tags={project.tags}
+                onClick={() => handleOpenProjectDetails(project.id)}
+              />
+            ))}
           </div>
-        }
-      />
+          <div className="mt-4 text-center md:mt-6 md:text-left">
+            <a
+              href="/projects?type=mobile"
+              className="hover:text-primary-900/90 inline-block rounded-lg font-medium underline underline-offset-4 transition-colors duration-200 md:text-lg"
+            >
+              See More
+            </a>
+          </div>
+        </div>
+      </Section>
+
       <ProjectDetailsModal
         isOpen={isOpen}
         onClose={handleCloseProjectDetails}

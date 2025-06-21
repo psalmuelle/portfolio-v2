@@ -69,7 +69,7 @@ export default async function NotePage({
           </ul>
           <p className="text-primary-900 mt-6 text-lg">
             By the end of this guide, you will have a solid understanding of how
-            to build a blog with Next.js and make it rank on Google. Let's get
+            to build a blog with Next.js and make it rank on Google. Let&apos;s get
             started!
           </p>
           <p className="text-primary-900 mt-6 text-lg">

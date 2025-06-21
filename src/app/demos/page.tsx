@@ -15,7 +15,7 @@ export default function DemosPage() {
 
         <p className="mt-4 text-sm md:text-base">
           Walkthrough demos highlighting key features and functionality of the
-          projects I've developed.
+          projects I&apos;ve developed.
         </p>
       </hgroup>
 
