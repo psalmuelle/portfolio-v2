@@ -7,12 +7,14 @@ export const metadata: Metadata = {
   title: 'Title of the Note',
 };
 
-type PageType = Promise<{
-  params: { slug: string };
-}>;
+// type PageType = {
+//   params: { slug: string };
+// };
 
-export default async function NotePage(props: PageType) {
-  const { params } = await props;
+export default async function NotePage(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await props.params;
   return (
     <>
       {/* <Head>
@@ -32,7 +34,7 @@ export default async function NotePage(props: PageType) {
         <div className="pt-6">
           <Image
             src={`https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png`}
-            alt={`Image for ${params.slug}`}
+            alt={`Image for ${slug}`}
             width={1024}
             height={400}
             className="h-40 w-full rounded-xl object-cover"
