@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import Icon from '@/components/Icons';
 import Image from 'next/image';
 // import Head from 'next/head';
@@ -11,7 +12,7 @@ export default async function NotePage({
   params,
 }: {
   params: { slug: string };
-}) {
+}): Promise<JSX.Element> {
   return (
     <>
       {/* <Head>
@@ -69,8 +70,8 @@ export default async function NotePage({
           </ul>
           <p className="text-primary-900 mt-6 text-lg">
             By the end of this guide, you will have a solid understanding of how
-            to build a blog with Next.js and make it rank on Google. Let&apos;s get
-            started!
+            to build a blog with Next.js and make it rank on Google. Let&apos;s
+            get started!
           </p>
           <p className="text-primary-900 mt-6 text-lg">
             If you have any questions or need further assistance, feel free to
