@@ -1,4 +1,3 @@
-import { JSX } from 'react';
 import Icon from '@/components/Icons';
 import Image from 'next/image';
 // import Head from 'next/head';
@@ -8,11 +7,12 @@ export const metadata: Metadata = {
   title: 'Title of the Note',
 };
 
-export default async function NotePage({
-  params,
-}: {
+type PageType = Promise<{
   params: { slug: string };
-}): Promise<JSX.Element> {
+}>;
+
+export default async function NotePage(props: PageType) {
+  const { params } = await props;
   return (
     <>
       {/* <Head>
