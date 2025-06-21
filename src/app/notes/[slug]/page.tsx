@@ -1,6 +1,6 @@
 import Icon from '@/components/Icons';
 import Image from 'next/image';
-import Head from 'next/head';
+// import Head from 'next/head';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

@@ -4,8 +4,8 @@ import ProjectCard from '../ProjectCard';
 import Section from './Section';
 import { useQuery } from '@apollo/client';
 import { GET_PROJECTS } from '@/lib/graphql/queries';
-import Modal from '../Modal';
-import Image from 'next/image';
+// import Modal from '../Modal';
+// import Image from 'next/image';
 import ProjectDetailsModal from '../ProjectDetails';
 
 const sampleProjects = [
