@@ -42,7 +42,9 @@ export default function ProjectDetailsModal({
 
         <div className="mt-8 flex flex-col gap-8 md:flex-row">
           <div className="w-full md:w-2/3">
-            <p className="text-base">{project?.description}</p>
+            <p className="text-base whitespace-pre-wrap">
+              {project?.description}
+            </p>
           </div>
           <div className="w-full md:w-1/3">
             <h3 className="text-lg font-semibold">Stack</h3>

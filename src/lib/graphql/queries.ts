@@ -35,14 +35,16 @@ export const GET_PROJECTS_WALKTHROUGH_LINKS = gql`
 
 export const GET_WORK_EXPERIENCE = gql`
   query GetWorkExperience {
-    workExperience {
-      id
-      role
-      company
-      description
-      location
-      startDate
-      endDate
+    workExperienceCollection {
+      items {
+        id
+        role
+        company
+        description
+        location
+        startDate
+        endDate
+      }
     }
   }
 `;
