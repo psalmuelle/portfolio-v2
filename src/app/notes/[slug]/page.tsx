@@ -3,13 +3,31 @@ import Image from 'next/image';
 // import Head from 'next/head';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Title of the Note',
-};
 
-// type PageType = {
-//   params: { slug: string };
-// };
+export async function generateStaticParams(){
+  return [
+    { slug: 'how-to-build-a-blog-with-nextjs-and-make-it-rank-on-google' },
+    { slug: 'another-note-slug' },
+    { slug: 'yet-another-note-slug' },
+  ];
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+
+  return {
+    title: "",
+    description: "",
+    keywords: ["Next.js", "Blog", "SEO", "Web Development", "React"],
+    openGraph: {
+      images: [
+        {
+          url: "",
+          alt: ''
+        }
+      ]
+    }
+  }
+}
 
 export default async function NotePage(props: {
   params: Promise<{ slug: string }>;

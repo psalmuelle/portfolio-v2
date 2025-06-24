@@ -12,26 +12,11 @@ export const GET_PROJECTS = gql`
         title
         description
         type
+        techStack
+        githubUrl
+        liveUrl
+        demo
       }
-    }
-  }
-`;
-
-export const GET_PROJECT_BY_ID = gql`
-  query GetProjectById($id: ID!) {
-    projects(id: $id) {
-      _id
-      img {
-        url
-        description
-      }
-      title
-      description
-      type
-      techStack
-      githubUrl
-      liveUrl
-      demo
     }
   }
 `;

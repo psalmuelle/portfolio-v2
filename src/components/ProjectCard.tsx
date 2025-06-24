@@ -33,7 +33,7 @@ export default function ProjectCard({
           </h2>
           <p className="line-clamp-2 text-sm text-white">{description}</p>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 mt-2">
             {tags.map((tag, index) => (
               <Tag key={index}>{tag}</Tag>
             ))}
