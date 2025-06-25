@@ -2,10 +2,24 @@
 import ProjectCard from '@/components/ProjectCard';
 import ProjectDetailsModal from '@/components/ProjectDetails';
 import { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { GET_PROJECTS } from '@/lib/graphql/queries';
+import { ProjectProps } from '@/utils/types';
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { data: projects, loading } = useQuery<{
+    projectsCollection: { items: ProjectProps[] };
+  }>(GET_PROJECTS);
+
+  const filteredProjects = projects?.projectsCollection?.items.filter(
+    (project) => {
+      if (activeFilter === 'All') return true;
+      return project.type === activeFilter.toLowerCase();
+    },
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -28,40 +42,32 @@ export default function ProjectsPage() {
       </div>
 
       <div className="mt-10 mb-36 grid grid-cols-1 gap-6 md:mt-14 md:grid-cols-2 lg:grid-cols-3">
-        <ProjectCard
-          title="MovieFlex - A Movie Recommendation App"
-          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?"
-          img="https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png"
-          tags={['React', 'Next.js', 'Tailwind CSS']}
-          onClick={() => {
-            setIsModalOpen(true);
-          }}
-        />
-        <ProjectCard
-          title="MovieFlex - A Movie Recommendation App"
-          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?"
-          img="https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png"
-          tags={['React', 'Next.js']}
-          onClick={() => {
-            setIsModalOpen(true);
-          }}
-        />
-        <ProjectCard
-          title="MovieFlex - A Movie Recommendation App"
-          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, esse dolor magnam tempore debitis quasi accusamus nesciunt. Ut, possimus rerum odit eaque sunt repudiandae saepe consectetur, iure dicta earum id labore beatae. Sit similique neque qui animi esse excepturi, consectetur illo eos ullam placeat? Enim voluptatibus architecto ipsam necessitatibus delectus?"
-          img="https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png"
-          tags={['React', 'Next.js', 'Tailwind CSS']}
-          onClick={() => {
-            setIsModalOpen(true);
-          }}
-        />
+        {loading ? (
+          <div className="col-span-3 text-center">
+            <p className="text-gray-500">Loading projects...</p>
+          </div>
+        ) : filteredProjects && filteredProjects.length > 0 ? (
+          filteredProjects.map((project) => (
+            <ProjectCard
+              key={project._id}
+              title={project.title}
+              description={project.description}
+              img={project.img.url}
+              tags={project.techStack.slice(0, 3)}
+              onClick={() => setIsModalOpen(true)}
+            />
+          ))
+        ) : (
+          <div className="col-span-3 text-center">
+            <p className="text-gray-500">No projects found.</p>
+          </div>
+        )}
       </div>
 
       <ProjectDetailsModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        imgSrc="https://images.ctfassets.net/f1pjbpw1fgkh/1p9YYW0cEChbeSesFVsVxJ/6216258e9482f282225dbf7fc87e3cc5/Screenshot_2025-06-15_225831.png"
-        imgDesc="MovieFlex - A Movie Recommendation App"
+        // project={}
       />
     </div>
   );

@@ -33,7 +33,7 @@ export default function ProjectCard({
           </h2>
           <p className="line-clamp-2 text-sm text-white">{description}</p>
 
-          <div className="flex items-center gap-2 mt-2">
+          <div className="mt-2 flex items-center gap-2">
             {tags.map((tag, index) => (
               <Tag key={index}>{tag}</Tag>
             ))}
@@ -48,7 +48,7 @@ export default function ProjectCard({
         >
           <span className="bg-primary-300 absolute h-0 w-0 rounded-full transition-all duration-350 ease-out group-hover:h-12 group-hover:w-12 group-active:h-12 group-active:w-12"></span>
           <Icon
-            name="caretRight"
+            name="arrowOutSimple"
             size={20}
             color="#1c1c1c"
             weight="bold"
