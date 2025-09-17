@@ -2,6 +2,19 @@ async function fetchGraphQL(
   query: string,
   variables?: Record<string, unknown>,
 ) {
+  // Check if environment variables are set
+  if (!process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID) {
+    throw new Error(
+      'NEXT_PUBLIC_CONTENTFUL_SPACE_ID environment variable is not set',
+    );
+  }
+
+  if (!process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN) {
+    throw new Error(
+      'NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN environment variable is not set',
+    );
+  }
+
   const response = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`,
     {
@@ -20,12 +33,23 @@ async function fetchGraphQL(
   );
 
   if (!response.ok) {
-    throw new Error(`GraphQL request failed: ${response.statusText}`);
+    const errorText = await response.text();
+    console.error(
+      'GraphQL request failed:',
+      response.status,
+      response.statusText,
+      errorText,
+    );
+    throw new Error(
+      `GraphQL request failed: ${response.statusText} (${response.status})`,
+    );
   }
 
-  const { data, errors } = await response.json();
+  const responseData = await response.json();
+  const { data, errors } = responseData;
 
   if (errors) {
+    console.error('GraphQL errors:', errors);
     throw new Error(`GraphQL errors: ${JSON.stringify(errors)}`);
   }
 
@@ -109,8 +133,10 @@ export async function getNoteBySlug(slug: string) {
           slug
           description
           dateCreated
-          content
-          featuredImage {
+          content {
+            json
+         }
+          img {
             url
             description
           }
@@ -120,6 +146,7 @@ export async function getNoteBySlug(slug: string) {
   `;
 
   const data = await fetchGraphQL(query, { slug });
+  console.log(data.notesCollection.items[0])
   return data.notesCollection.items[0] || null;
 }
 

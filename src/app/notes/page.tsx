@@ -1,11 +1,13 @@
 import { Metadata } from 'next';
 import { getNotes } from '@/lib/graphql/server';
 import NoteCard from '@/components/notes/NoteCard';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { NoteProps } from '@/utils/types';
 
 export const metadata: Metadata = {
   title: 'Notes',
-  description: 'A collection of insights, tutorials, and notes gathered from my learning journey and hands-on project work in web development, React, and modern technologies. Discover practical programming tips and development insights.',
+  description:
+    'A collection of insights, tutorials, and notes gathered from my learning journey and hands-on project work in web development, React, and modern technologies. Discover practical programming tips and development insights.',
   keywords: [
     'development notes',
     'programming blog',
@@ -17,12 +19,13 @@ export const metadata: Metadata = {
     'TypeScript tutorials',
     'frontend development',
     'coding best practices',
-    'developer insights'
+    'developer insights',
   ],
   authors: [{ name: 'Erinle Samuel' }],
   openGraph: {
     title: 'Notes & Insights | Erinle Sam',
-    description: 'A collection of insights, tutorials, and notes from my web development journey. Practical programming tips and modern technology guides.',
+    description:
+      'A collection of insights, tutorials, and notes from my web development journey. Practical programming tips and modern technology guides.',
     type: 'website',
     url: 'https://erinlesam.com/notes',
     images: [
@@ -37,7 +40,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Development Notes & Insights | Erinle Sam',
-    description: 'Practical programming tips and insights from my web development journey.',
+    description:
+      'Practical programming tips and insights from my web development journey.',
     images: ['/notes-og-image.png'],
   },
   alternates: {
@@ -52,39 +56,78 @@ export const metadata: Metadata = {
 export default async function NotesPage() {
   const notes: NoteProps[] = await getNotes();
 
-  return (
-    <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-      <hgroup>
-        <h1 className="font-clash pt-6 text-2xl underline underline-offset-3 md:text-3xl">
-          Notes
-        </h1>
+  // Generate structured data for blog/notes collection
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Erinle Sam Development Notes',
+    description: 'Development insights, tutorials, and programming tips',
+    url: 'https://erinlesam.com/notes',
+    author: {
+      '@type': 'Person',
+      name: 'Erinle Samuel',
+      url: 'https://erinlesam.com',
+    },
+    blogPost: notes.map((note: NoteProps) => ({
+      '@type': 'BlogPosting',
+      headline: note.title,
+      description: note.description,
+      url: `https://erinlesam.com/notes/${note.slug}`,
+      datePublished: note.dateCreated,
+      author: {
+        '@type': 'Person',
+        name: 'Erinle Samuel',
+      },
+    })),
+  };
 
-        <p className="mt-4 text-sm md:text-base">
-          A collection of insights and notes gathered from my learning journey
-          and hands-on project work.
-        </p>
-      </hgroup>
-      <div className="mt-10 mb-36 grid grid-cols-1 gap-6 md:mt-14 md:grid-cols-2 lg:grid-cols-3">
-        {notes && notes.length > 0 ? (
-          notes.map((note: NoteProps) => (
-            <NoteCard
-              key={note.id}
-              title={note.title}
-              date={new Date(note.dateCreated).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-              description={note.description}
-              slug={note.slug}
-            />
-          ))
-        ) : (
-          <div className="col-span-3 text-center">
-            <p className="text-gray-500">No notes found...</p>
-          </div>
-        )}
+  const breadcrumbItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Notes', href: '/notes', current: true },
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+        <div className="pt-4">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
+        <hgroup>
+          <h1 className="font-clash pt-6 text-2xl underline underline-offset-3 md:text-3xl">
+            Notes
+          </h1>
+
+          <p className="mt-4 text-sm md:text-base">
+            A collection of insights and notes gathered from my learning journey
+            and hands-on project work.
+          </p>
+        </hgroup>
+        <div className="mt-10 mb-36 grid grid-cols-1 gap-6 md:mt-14 md:grid-cols-2 lg:grid-cols-3">
+          {notes && notes.length > 0 ? (
+            notes.map((note: NoteProps) => (
+              <NoteCard
+                key={note.id}
+                title={note.title}
+                date={new Date(note.dateCreated).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+                description={note.description}
+                slug={note.slug}
+              />
+            ))
+          ) : (
+            <div className="col-span-3 text-center">
+              <p className="text-gray-500">No notes found...</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -21,10 +21,14 @@ export default function ProjectCard({
     <div className="relative w-full cursor-pointer rounded-xl transition-transform duration-350 hover:scale-102 hover:shadow-lg">
       <Image
         src={img}
-        alt={title}
+        alt={`${title} - ${description.substring(0, 50)}...`}
         width={400}
         height={400}
         className="aspect-square w-full rounded-xl object-cover"
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+Ss6RhtwlBE7u1/wB+ov8Ak1aFYFYFJ4Y3a/8AWpQl95d6rg5LCY0t+/8APeGxBzywbr/y6zqKGU5hSLZxVs1jrW1/8/0bQYA="
       />
       <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-[#1c1c1c] via-[#1c1c1c]/80 to-transparent p-4">
         <div className="flex h-full w-full flex-col justify-end gap-2">

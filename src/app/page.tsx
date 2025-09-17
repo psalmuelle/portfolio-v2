@@ -3,6 +3,11 @@ import ContactSection from '@/components/home/ContactSection';
 import WorkExperienceSection from '@/components/home/ExperienceSection';
 import ProjectSection from '@/components/home/ProjectSection';
 import { getProjects, getWorkExperience } from '@/lib/graphql/server';
+import {
+  generatePersonSchema,
+  generateWebsiteSchema,
+} from '@/utils/structuredData';
+import { ProjectProps } from '@/utils/types';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -63,44 +68,45 @@ export default async function Home() {
     getWorkExperience(),
   ]);
 
-  const structuredData = {
+  const personSchema = generatePersonSchema();
+  const websiteSchema = generateWebsiteSchema();
+
+  // Portfolio showcase structured data
+  const portfolioSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Erinle Samuel',
-    jobTitle: 'Frontend Engineer',
-    description:
-      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies.',
-    url: 'https://erinlesam.com',
-    sameAs: [
-      'https://github.com/psalmuelle', // Replace with actual GitHub
-      'https://linkedin.com/in/your-linkedin', // Replace with actual LinkedIn
-      'https://twitter.com/your_twitter_handle', // Replace with actual Twitter
-    ],
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Freelance',
-    },
-    knowsAbout: [
-      'React.js',
-      'Next.js',
-      'React Native',
-      'JavaScript',
-      'TypeScript',
-      'Web Development',
-      'Mobile Development',
-      'UI/UX Design',
-    ],
-    alumniOf: {
-      '@type': 'Organization',
-      name: 'Your University', // Replace with actual education
-    },
+    '@type': 'ItemList',
+    name: 'Frontend Development Portfolio',
+    description: 'A showcase of web and mobile development projects',
+    numberOfItems: projects.length,
+    itemListElement: projects
+      .slice(0, 6)
+      .map((project: ProjectProps, index: number) => ({
+        '@type': 'CreativeWork',
+        position: index + 1,
+        name: project.title,
+        description: project.description,
+        author: {
+          '@type': 'Person',
+          name: 'Erinle Samuel',
+        },
+        genre: 'Software Development',
+        keywords: project.techStack,
+      })),
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
       />
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <hgroup className="text-center">

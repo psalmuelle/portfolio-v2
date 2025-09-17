@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import Header from '@/components/Header';
 import MenuBar from '@/components/MenuBar';
 import localFont from 'next/font/local';
+import {
+  generateWebsiteSchema,
+  generateOrganizationSchema,
+} from '@/utils/structuredData';
 import './globals.css';
 
 const lufgaFonts = localFont({
@@ -133,8 +137,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = generateWebsiteSchema();
+  const organizationSchema = generateOrganizationSchema();
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+      </head>
       <body className={`${lufgaFonts.className} antialiased`}>
         <Header />
         {children}
