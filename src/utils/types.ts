@@ -22,3 +22,11 @@ export type ExperienceProps = {
   startDate: string;
   endDate?: string;
 };
+
+export type NoteProps = {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  dateCreated: string;
+};

@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import MenuBar from '@/components/MenuBar';
 import localFont from 'next/font/local';
 import './globals.css';
-import ApolloWrapper from '@/components/ApolloWrapper';
 
 const lufgaFonts = localFont({
   src: [
@@ -61,11 +60,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${lufgaFonts.className} antialiased`}>
-        <ApolloWrapper>
-          <Header />
-          {children}
-          <MenuBar />
-        </ApolloWrapper>
+        <Header />
+        {children}
+        <MenuBar />
       </body>
     </html>
   );

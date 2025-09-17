@@ -1,9 +1,37 @@
+import { Metadata } from 'next';
 import ContactSection from '@/components/home/ContactSection';
 import WorkExperienceSection from '@/components/home/ExperienceSection';
 import ProjectSection from '@/components/home/ProjectSection';
+import { getProjects, getWorkExperience } from '@/lib/graphql/server';
 import Link from 'next/link';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Erinle Sam - Frontend Engineer',
+  description:
+    'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies.',
+  keywords: [
+    'frontend engineer',
+    'React developer',
+    'Next.js',
+    'React Native',
+    'web development',
+    'mobile development',
+    'JavaScript',
+  ],
+  openGraph: {
+    title: 'Erinle Sam - Frontend Engineer',
+    description:
+      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies.',
+    type: 'website',
+  },
+};
+
+export default async function Home() {
+  const [projects, workExperience] = await Promise.all([
+    getProjects(),
+    getWorkExperience(),
+  ]);
+
   return (
     <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
       <hgroup className="text-center">
@@ -25,10 +53,10 @@ export default function Home() {
       </hgroup>
       <hr className="text-primary-900 mt-10 md:mt-12" />
       <div>
-        <ProjectSection />
+        <ProjectSection projects={projects} />
       </div>
       <div>
-        <WorkExperienceSection />
+        <WorkExperienceSection workExperience={workExperience} />
       </div>
       <div>
         <ContactSection />

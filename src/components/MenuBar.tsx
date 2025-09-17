@@ -34,16 +34,6 @@ export default function MenuBar() {
       >
         Notes
       </Link>
-
-      <Link
-        className={`flex w-10 items-center justify-center rounded-full px-2 py-1.5 text-xl ${
-          pathname === '/demos' ? 'bg-primary-300 text-black' : ''
-        }`}
-        href="/demos"
-      >
-        🎥
-        <span className="sr-only">Hobbies</span>
-      </Link>
     </nav>
   );
 }

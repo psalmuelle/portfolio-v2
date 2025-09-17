@@ -2,22 +2,19 @@
 import { useState } from 'react';
 import ProjectCard from '../ProjectCard';
 import Section from './Section';
-import { useQuery } from '@apollo/client';
-import { GET_PROJECTS } from '@/lib/graphql/queries';
 import ProjectDetailsModal from '../ProjectDetails';
 import { ProjectProps } from '@/utils/types';
 
-export default function ProjectSection() {
-  // Fetch all projects
-  const { data: projects, loading } = useQuery<{
-    projectsCollection: { items: ProjectProps[] };
-  }>(GET_PROJECTS);
-  const mobileProjects = projects?.projectsCollection.items.filter(
+interface ProjectSectionProps {
+  projects: ProjectProps[];
+}
+
+export default function ProjectSection({ projects }: ProjectSectionProps) {
+  // Filter projects by type
+  const mobileProjects = projects.filter(
     (project) => project.type === 'mobile',
   );
-  const webProjects = projects?.projectsCollection.items.filter(
-    (project) => project.type === 'web',
-  );
+  const webProjects = projects.filter((project) => project.type === 'web');
 
   // State for project details modal
   const [isOpen, setIsOpen] = useState(false);
@@ -38,11 +35,7 @@ export default function ProjectSection() {
       <Section title="Projects: Web">
         <div className="mt-6 md:mt-8">
           <div className="grid grid-cols-1 gap-6 px-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            {loading ? (
-              <div className="col-span-3 text-center">
-                <p className="text-gray-500">Loading projects...</p>
-              </div>
-            ) : webProjects && webProjects?.length > 0 ? (
+            {webProjects && webProjects?.length > 0 ? (
               webProjects.map((project) => (
                 <ProjectCard
                   key={project._id}
@@ -55,7 +48,7 @@ export default function ProjectSection() {
               ))
             ) : (
               <div className="col-span-3 text-center">
-                <p className="text-gray-500">No projects found.</p>
+                <p className="text-gray-500">No web projects found.</p>
               </div>
             )}
           </div>
@@ -74,11 +67,7 @@ export default function ProjectSection() {
       <Section title="Projects: Mobile">
         <div className="mt-6 md:mt-8">
           <div className="grid grid-cols-1 gap-6 px-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            {loading ? (
-              <div className="col-span-3 text-center">
-                <p className="text-gray-500">Loading projects...</p>
-              </div>
-            ) : mobileProjects && mobileProjects?.length > 0 ? (
+            {mobileProjects && mobileProjects?.length > 0 ? (
               mobileProjects.map((project) => (
                 <ProjectCard
                   key={project._id}
@@ -91,7 +80,7 @@ export default function ProjectSection() {
               ))
             ) : (
               <div className="col-span-3 text-center">
-                <p className="text-gray-500">No projects found.</p>
+                <p className="text-gray-500">No mobile projects found.</p>
               </div>
             )}
           </div>
