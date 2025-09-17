@@ -5,23 +5,47 @@ import { NoteProps } from '@/utils/types';
 
 export const metadata: Metadata = {
   title: 'Notes',
-  description:
-    'A collection of insights and notes gathered from my learning journey and hands-on project work in web development, React, and modern technologies.',
+  description: 'A collection of insights, tutorials, and notes gathered from my learning journey and hands-on project work in web development, React, and modern technologies. Discover practical programming tips and development insights.',
   keywords: [
-    'notes',
-    'blog',
-    'learning',
-    'web development',
-    'React',
-    'Next.js',
-    'React Native',
-    'programming insights',
+    'development notes',
+    'programming blog',
+    'tech tutorials',
+    'web development insights',
+    'React tutorials',
+    'Next.js guides',
+    'JavaScript tips',
+    'TypeScript tutorials',
+    'frontend development',
+    'coding best practices',
+    'developer insights'
   ],
+  authors: [{ name: 'Erinle Samuel' }],
   openGraph: {
-    title: 'Notes | Erinle Sam',
-    description:
-      'A collection of insights and notes gathered from my learning journey and hands-on project work.',
+    title: 'Notes & Insights | Erinle Sam',
+    description: 'A collection of insights, tutorials, and notes from my web development journey. Practical programming tips and modern technology guides.',
     type: 'website',
+    url: 'https://erinlesam.com/notes',
+    images: [
+      {
+        url: '/notes-og-image.png', // You can create a specific image for notes
+        width: 1200,
+        height: 630,
+        alt: 'Erinle Sam Development Notes and Insights',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Development Notes & Insights | Erinle Sam',
+    description: 'Practical programming tips and insights from my web development journey.',
+    images: ['/notes-og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://erinlesam.com/notes',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

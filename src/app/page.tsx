@@ -8,22 +8,53 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Erinle Sam - Frontend Engineer',
   description:
-    'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies.',
+    'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies. Explore my portfolio of innovative web and mobile applications.',
   keywords: [
     'frontend engineer',
     'React developer',
-    'Next.js',
-    'React Native',
+    'Next.js developer',
+    'React Native developer',
     'web development',
     'mobile development',
-    'JavaScript',
+    'JavaScript expert',
+    'TypeScript',
+    'UI/UX design',
+    'full-stack developer',
+    'portfolio',
   ],
+  authors: [{ name: 'Erinle Samuel', url: 'https://erinlesam.com' }],
   openGraph: {
-    title: 'Erinle Sam - Frontend Engineer',
+    title: 'Erinle Sam - Frontend Engineer & React Specialist',
     description:
-      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies.',
+      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies. Explore my portfolio of web and mobile applications.',
     type: 'website',
+    url: 'https://erinlesam.com',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Erinle Sam - Frontend Engineer Portfolio',
+      },
+    ],
+    siteName: 'Erinle Sam Portfolio',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Erinle Sam - Frontend Engineer & React Specialist',
+    description:
+      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building innovative web and mobile applications.',
+    images: ['/opengraph-image.png'],
+    creator: '@your_twitter_handle', // Replace with actual handle
+  },
+  alternates: {
+    canonical: 'https://erinlesam.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  category: 'technology',
 };
 
 export default async function Home() {
@@ -32,37 +63,76 @@ export default async function Home() {
     getWorkExperience(),
   ]);
 
-  return (
-    <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-      <hgroup className="text-center">
-        <h1 className="font-clash text-6xl tracking-wider max-sm:text-4xl">
-          Erinle Samuel
-        </h1>
-        <p className="mt-2 text-xl font-medium">
-          Frontend Engineer | React.js & React Native
-        </p>
-        <p className="mx-auto mt-4 max-w-3xl text-neutral-600">
-          A frontend developer, and javascript engineer. I spend most of my time
-          bringing{' '}
-          <Link href={'/projects'} className="text-primary-900 font-semibold">
-            #IDEAS
-          </Link>{' '}
-          to life! I love building sleek, user-friendly interfaces that are both
-          visually sharp and easy to use.
-        </p>
-      </hgroup>
-      <hr className="text-primary-900 mt-10 md:mt-12" />
-      <div>
-        <ProjectSection projects={projects} />
-      </div>
-      <div>
-        <WorkExperienceSection workExperience={workExperience} />
-      </div>
-      <div>
-        <ContactSection />
-      </div>
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Erinle Samuel',
+    jobTitle: 'Frontend Engineer',
+    description:
+      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies.',
+    url: 'https://erinlesam.com',
+    sameAs: [
+      'https://github.com/psalmuelle', // Replace with actual GitHub
+      'https://linkedin.com/in/your-linkedin', // Replace with actual LinkedIn
+      'https://twitter.com/your_twitter_handle', // Replace with actual Twitter
+    ],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Freelance',
+    },
+    knowsAbout: [
+      'React.js',
+      'Next.js',
+      'React Native',
+      'JavaScript',
+      'TypeScript',
+      'Web Development',
+      'Mobile Development',
+      'UI/UX Design',
+    ],
+    alumniOf: {
+      '@type': 'Organization',
+      name: 'Your University', // Replace with actual education
+    },
+  };
 
-      <div className="mt-36" />
-    </div>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+        <hgroup className="text-center">
+          <h1 className="font-clash text-6xl tracking-wider max-sm:text-4xl">
+            Erinle Samuel
+          </h1>
+          <p className="mt-2 text-xl font-medium">
+            Frontend Engineer | React.js & React Native
+          </p>
+          <p className="mx-auto mt-4 max-w-3xl text-neutral-600">
+            A frontend developer, and javascript engineer. I spend most of my
+            time bringing{' '}
+            <Link href={'/projects'} className="text-primary-900 font-semibold">
+              #IDEAS
+            </Link>{' '}
+            to life! I love building sleek, user-friendly interfaces that are
+            both visually sharp and easy to use.
+          </p>
+        </hgroup>
+        <hr className="text-primary-900 mt-10 md:mt-12" />
+        <div>
+          <ProjectSection projects={projects} />
+        </div>
+        <div>
+          <WorkExperienceSection workExperience={workExperience} />
+        </div>
+        <div>
+          <ContactSection />
+        </div>
+
+        <div className="mt-36" />
+      </div>
+    </>
   );
 }

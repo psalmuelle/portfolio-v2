@@ -45,11 +45,87 @@ const lufgaFonts = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://erinlesam.com'), // Replace with your actual domain
   title: {
     default: 'Erinle Sam - Frontend Engineer',
     template: '%s | Erinle Sam',
   },
-  description: 'Frontend Engineer | React.js & React Native',
+  description:
+    'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies.',
+  keywords: [
+    'Frontend Engineer',
+    'React Developer',
+    'Next.js',
+    'React Native',
+    'JavaScript',
+    'TypeScript',
+    'Web Development',
+    'Mobile Development',
+    'UI/UX',
+    'Portfolio',
+  ],
+  authors: [{ name: 'Erinle Samuel', url: 'https://erinlesam.com' }],
+  creator: 'Erinle Samuel',
+  publisher: 'Erinle Samuel',
+  formatDetection: {
+    email: true,
+    address: false,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://erinlesam.com',
+    siteName: 'Erinle Sam Portfolio',
+    title: 'Erinle Sam - Frontend Engineer',
+    description:
+      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies.',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Erinle Sam - Frontend Engineer Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Erinle Sam - Frontend Engineer',
+    description:
+      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces.',
+    images: ['/opengraph-image.png'],
+    creator: '@your_twitter_handle', // Replace with actual Twitter handle
+  },
+  verification: {
+    google: 'your-google-verification-code', // Replace with actual verification code
+    // yandex: 'your-yandex-verification-code',
+    // yahoo: 'your-yahoo-verification-code',
+  },
+  alternates: {
+    canonical: 'https://erinlesam.com',
+  },
+  category: 'technology',
+  other: {
+    'theme-color': '#16423c',
+    'color-scheme': 'light',
+    'twitter:image': '/opengraph-image.png',
+    'twitter:card': 'summary_large_image',
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:type': 'image/png',
+  },
 };
 
 export default function RootLayout({

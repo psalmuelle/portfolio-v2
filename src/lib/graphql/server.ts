@@ -99,6 +99,47 @@ export async function getNotes() {
   return data.notesCollection.items;
 }
 
+export async function getNoteBySlug(slug: string) {
+  const query = `
+    query GetNoteBySlug($slug: String!) {
+      notesCollection(where: { slug: $slug }, limit: 1) {
+        items {
+          id
+          title
+          slug
+          description
+          dateCreated
+          content
+          featuredImage {
+            url
+            description
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await fetchGraphQL(query, { slug });
+  return data.notesCollection.items[0] || null;
+}
+
+export async function getAllNoteSlugs() {
+  const query = `
+    query GetAllNoteSlugs {
+      notesCollection {
+        items {
+          slug
+        }
+      }
+    }
+  `;
+
+  const data = await fetchGraphQL(query);
+  return data.notesCollection.items.map((note: { slug: string }) => ({
+    slug: note.slug,
+  }));
+}
+
 export async function getBlogPostBySlug(slug: string) {
   const query = `
     query GetBlogPostBySlug($slug: String!) {
