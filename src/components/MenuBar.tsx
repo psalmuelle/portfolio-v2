@@ -36,7 +36,7 @@ export default function MenuBar() {
       </Link>
       <Link
         className={`rounded-lg px-4 py-2 ${
-          pathname.includes('/hobby') ? 'bg-primary-300 text-black' : ''
+          pathname.includes('/hobbies') ? 'bg-primary-300 text-black' : ''
         }`}
         href={'/hobbies'}
       >

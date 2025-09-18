@@ -11,8 +11,6 @@ import {
   YoutubeLogoIcon,
   DotIcon,
   ArrowsOutSimpleIcon,
-  PlayIcon,
-  PauseIcon,
 } from '@phosphor-icons/react';
 
 const iconMap = {
@@ -28,8 +26,6 @@ const iconMap = {
   youtubeLogo: YoutubeLogoIcon,
   dot: DotIcon,
   arrowOutSimple: ArrowsOutSimpleIcon,
-  play: PlayIcon,
-  pause: PauseIcon,
   // Add more icons as needed
 } as const;
 

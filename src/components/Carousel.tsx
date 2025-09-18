@@ -204,11 +204,6 @@ export default function Carousel({
     setIsHovered(false);
   }, []);
 
-  // Toggle play/pause function
-  const togglePlayPause = useCallback(() => {
-    setIsPlaying((prev) => !prev);
-  }, []);
-
   if (!items || items.length === 0) {
     return (
       <div className="flex h-64 items-center justify-center rounded-lg bg-gray-100">
@@ -301,17 +296,6 @@ export default function Carousel({
             />
           ))}
         </div>
-      )}
-
-      {/* Play/Pause button (if autoplay is enabled) */}
-      {autoPlay && (
-        <button
-          onClick={togglePlayPause}
-          className="absolute top-4 right-4 rounded-full bg-black/50 p-2 text-white backdrop-blur-sm transition-all hover:bg-black/70 focus:ring-2 focus:ring-white/50 focus:outline-none"
-          aria-label={isPlaying ? 'Pause autoplay' : 'Resume autoplay'}
-        >
-          <Icon name={isPlaying ? 'pause' : 'play'} className="h-4 w-4" />
-        </button>
       )}
 
       {/* Image counter */}
