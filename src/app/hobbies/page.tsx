@@ -102,7 +102,7 @@ export default function HobbiesPage() {
           </h1>
 
           <p className="mt-4 text-sm md:text-base">
-            Beyond software development, I'm passionate about healthcare
+            Beyond software development, I&apos;m passionate about healthcare
             innovation and experimental hardware projects.
           </p>
         </hgroup>
@@ -113,7 +113,7 @@ export default function HobbiesPage() {
               <div>
                 <p className="mt-4 text-gray-700">
                   My hobbies include working on health tech and building random
-                  hardware. I plan to post videos and articles on what I'm
+                  hardware. I plan to post videos and articles on what I&apos;m
                   doing.
                 </p>
               </div>
@@ -136,7 +136,7 @@ export default function HobbiesPage() {
                   href="mailto:psalmuelle1@gmail.com"
                   className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2"
                 >
-                  Let's connect
+                  Let&apos;s connect
                 </a>
               </p>
             </div>

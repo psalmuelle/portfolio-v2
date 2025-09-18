@@ -66,7 +66,7 @@ export default async function ProjectsPage() {
       'A collection of web and mobile development projects showcasing modern technologies',
     numberOfItems: projects.length,
     itemListElement: projects
-      .map((project: ProjectProps, index: number) =>
+      .map((project: ProjectProps) =>
         generateProjectSchema(
           project.title,
           project.description,
