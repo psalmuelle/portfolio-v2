@@ -1,16 +1,21 @@
+export type ImageProps = {
+  url: string;
+  description?: string;
+};
+
 export type ProjectProps = {
   _id: string;
   title: string;
   description: string;
-  img: {
-    url: string;
-    description: string;
-  };
+  previewImg: ImageProps;
   type: 'web' | 'mobile';
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
   demo?: string;
+  appScreenshots?: {
+    items: ImageProps[];
+  };
 };
 
 export type ExperienceProps = {

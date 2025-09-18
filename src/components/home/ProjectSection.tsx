@@ -41,7 +41,7 @@ export default function ProjectSection({ projects }: ProjectSectionProps) {
                   key={project._id}
                   title={project.title}
                   description={project.description}
-                  img={project.img.url}
+                  img={project.previewImg.url}
                   tags={project.techStack.slice(0, 3)}
                   onClick={() => handleOpenProjectDetails(project)}
                 />
@@ -73,7 +73,7 @@ export default function ProjectSection({ projects }: ProjectSectionProps) {
                   key={project._id}
                   title={project.title}
                   description={project.description}
-                  img={project.img.url}
+                  img={project.previewImg.url}
                   tags={project.techStack.slice(0, 3)}
                   onClick={() => handleOpenProjectDetails(project)}
                 />

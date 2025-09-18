@@ -5,11 +5,14 @@ import {
   LinkedinLogoIcon,
   XLogoIcon,
   CaretRightIcon,
+  CaretLeftIcon,
   XIcon,
   ArrowSquareOutIcon,
   YoutubeLogoIcon,
   DotIcon,
   ArrowsOutSimpleIcon,
+  PlayIcon,
+  PauseIcon,
 } from '@phosphor-icons/react';
 
 const iconMap = {
@@ -17,11 +20,16 @@ const iconMap = {
   githubLogo: GithubLogoIcon,
   xLogo: XLogoIcon,
   caretRight: CaretRightIcon,
+  caretLeft: CaretLeftIcon,
+  chevronLeft: CaretLeftIcon,
+  chevronRight: CaretRightIcon,
   x: XIcon,
   arrowOut: ArrowSquareOutIcon,
   youtubeLogo: YoutubeLogoIcon,
   dot: DotIcon,
   arrowOutSimple: ArrowsOutSimpleIcon,
+  play: PlayIcon,
+  pause: PauseIcon,
   // Add more icons as needed
 } as const;
 

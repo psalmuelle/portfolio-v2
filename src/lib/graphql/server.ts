@@ -28,7 +28,7 @@ async function fetchGraphQL(
         variables,
       }),
       // Add cache revalidation for better performance
-      next: { revalidate: 3600 }, // Revalidate every hour
+      //   next: { revalidate: 900 }, // Revalidate every hour
     },
   );
 
@@ -60,24 +60,30 @@ async function fetchGraphQL(
 export async function getProjects() {
   const query = `
     query GetProjects {
-      projectsCollection {
-        items {
-          _id
-          img {
-            url
-            description
-          }
-          title
-          description
-          type
-          techStack
-          githubUrl
-          liveUrl
-          demo
+        projectsCollection {
+            items {
+                _id
+                previewImg {
+                    url
+                    description
+                }
+                title
+                description
+                type
+                techStack
+                githubUrl
+                liveUrl
+                appScreenshotsCollection {
+                  items {
+                  url
+                  description
+                  }
+ 
+                }
+            }
         }
-      }
     }
-  `;
+`;
 
   const data = await fetchGraphQL(query);
   return data.projectsCollection.items;
@@ -146,7 +152,7 @@ export async function getNoteBySlug(slug: string) {
   `;
 
   const data = await fetchGraphQL(query, { slug });
-  console.log(data.notesCollection.items[0])
+  console.log(data.notesCollection.items[0]);
   return data.notesCollection.items[0] || null;
 }
 

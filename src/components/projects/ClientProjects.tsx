@@ -12,11 +12,17 @@ interface ClientProjectsProps {
 export default function ClientProjects({ projects }: ClientProjectsProps) {
   const [activeFilter, setActiveFilter] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState<ProjectProps>();
 
   const filteredProjects = projects.filter((project) => {
     if (activeFilter === 'All') return true;
     return project.type === activeFilter.toLowerCase();
   });
+
+  const handleOpenDetails = (project: ProjectProps) => {
+    setIsModalOpen(true);
+    setActiveProject(project);
+  };
 
   return (
     <>
@@ -46,9 +52,9 @@ export default function ClientProjects({ projects }: ClientProjectsProps) {
               key={project._id}
               title={project.title}
               description={project.description}
-              img={project.img.url}
+              img={project.previewImg.url}
               tags={project.techStack.slice(0, 3)}
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => handleOpenDetails(project)}
             />
           ))
         ) : (
@@ -61,7 +67,7 @@ export default function ClientProjects({ projects }: ClientProjectsProps) {
       <ProjectDetailsModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        // project={}
+        project={activeProject}
       />
     </>
   );

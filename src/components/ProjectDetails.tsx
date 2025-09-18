@@ -1,8 +1,8 @@
 import Modal from './Modal';
 import Icon from './Icons';
 import Tag from './Tag';
-import YouTubeEmbed from './YoutubeEmbed';
 import { ProjectProps } from '@/utils/types';
+import Carousel from './Carousel';
 
 type ProjectDetailsProps = {
   isOpen: boolean;
@@ -20,8 +20,17 @@ export default function ProjectDetailsModal({
       <h2 aria-label="modal-title" className="font-clash text-xl">
         {project?.title}
       </h2>
-      <div className="max-h-[70svh] overflow-y-auto py-6">
-        <YouTubeEmbed videoId={project?.demo ?? ''} />
+      <div className="max-h-[80svh] overflow-y-auto py-6">
+        <Carousel
+          items={
+            project?.previewImg
+              ? [project.previewImg, project.previewImg, project.previewImg]
+              : []
+          }
+          autoPlay={true}
+          showDots={true}
+          showArrows={true}
+        />
         <div className="mt-4 flex gap-4 text-sm md:gap-6">
           <button className="hover:bg-primary-100 active:bg-primary-100 border-primary-600 cursor-pointer rounded-lg border bg-white font-medium transition-all duration-350 ease-out hover:shadow">
             <a href={project?.liveUrl} className="flex items-start px-3 py-1.5">

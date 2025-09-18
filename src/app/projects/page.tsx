@@ -70,7 +70,7 @@ export default async function ProjectsPage() {
         generateProjectSchema(
           project.title,
           project.description,
-          project.img.url,
+          project.previewImg.url,
           project.techStack,
           project.liveUrl,
         ),

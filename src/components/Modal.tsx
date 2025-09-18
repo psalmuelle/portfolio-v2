@@ -46,7 +46,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
             key="modal"
             ref={modalRef}
             onClick={(e) => e.stopPropagation()}
-            className="w-11/12 max-w-3xl rounded-xl bg-zinc-50 p-4 shadow-xl focus:outline-none md:p-6"
+            className="w-11/12 max-w-5xl rounded-xl bg-zinc-50 p-4 shadow-xl focus:outline-none md:p-6"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
