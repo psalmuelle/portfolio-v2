@@ -101,6 +101,9 @@ export default async function ProjectsPage() {
         <h1 className="font-clash pt-6 text-2xl underline underline-offset-3 md:text-3xl">
           Projects
         </h1>
+        <p className="mt-4 mb-10 text-sm md:text-base">
+          A curated selection of my web and mobile projects.
+        </p>
         <ClientProjects projects={projects} />
       </div>
     </>

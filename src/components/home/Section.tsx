@@ -11,10 +11,19 @@ export default function Section({ title, children }: SectionProps) {
   const [toggleSection, setToggleSection] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState('0px');
+  const [duration, setDuration] = useState(250);
 
   useEffect(() => {
     if (contentRef.current == null) return;
-    setHeight(toggleSection ? `${contentRef.current.scrollHeight}px` : '0px');
+    const contentHeight = contentRef.current.scrollHeight;
+
+    const calculatedDuration = Math.min(
+      Math.max(200, (contentHeight / 200) * 250),
+      600,
+    );
+    setDuration(calculatedDuration);
+
+    setHeight(toggleSection ? `${contentHeight}px` : '0px');
   }, [toggleSection, contentRef]);
   return (
     <section className="border-primary-900 border-b py-6 md:py-8">
@@ -26,17 +35,21 @@ export default function Section({ title, children }: SectionProps) {
           name="caretRight"
           color="#1c1c1c"
           weight="bold"
-          className={`transition-transform duration-350 ${
+          className={`transition-transform ease-linear ${
             toggleSection ? 'rotate-90' : ''
           }`}
+          style={{ transitionDuration: `${duration}ms` }}
           size={20}
         />
         <span>{title}</span>
       </h2>
       <div
         ref={contentRef}
-        style={{ maxHeight: height }}
-        className={`overflow-hidden transition-all duration-350 ease-linear`}
+        style={{
+          maxHeight: height,
+          transitionDuration: `${duration}ms`,
+        }}
+        className={`overflow-hidden transition-all ease-linear`}
       >
         {children}
       </div>
