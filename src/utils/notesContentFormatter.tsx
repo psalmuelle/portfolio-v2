@@ -1,5 +1,6 @@
 import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
 import { Options } from '@contentful/rich-text-react-renderer';
+import type { Block, Inline } from '@contentful/rich-text-types';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -115,14 +116,6 @@ const Table = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const TableHead = ({ children }: { children: React.ReactNode }) => (
-  <thead className="bg-primary-50">{children}</thead>
-);
-
-const TableBody = ({ children }: { children: React.ReactNode }) => (
-  <tbody className="divide-y divide-gray-200">{children}</tbody>
-);
-
 const TableRow = ({ children }: { children: React.ReactNode }) => (
   <tr className="hover:bg-gray-50">{children}</tr>
 );
@@ -141,7 +134,7 @@ const TableCell = ({ children }: { children: React.ReactNode }) => (
 );
 
 // Embedded asset component
-const EmbeddedAsset = ({ node }: { node: any }) => {
+const EmbeddedAsset = ({ node }: { node: Block | Inline }) => {
   const { file, title, description } = node.data.target.fields;
   const imageUrl = file?.url;
   const imageTitle = title || 'Embedded image';
@@ -174,7 +167,7 @@ const Hyperlink = ({
   node,
   children,
 }: {
-  node: any;
+  node: Block | Inline;
   children: React.ReactNode;
 }) => {
   const uri = node.data.uri;
@@ -198,7 +191,7 @@ const EntryHyperlink = ({
   node,
   children,
 }: {
-  node: any;
+  node: Block | Inline;
   children: React.ReactNode;
 }) => {
   // You can customize this based on your content structure
