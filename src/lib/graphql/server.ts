@@ -28,7 +28,7 @@ async function fetchGraphQL(
         variables,
       }),
       // Add cache revalidation for better performance
-      //   next: { revalidate: 900 }, // Revalidate every hour
+      next: { revalidate: 900 }, // Revalidate 30 min
     },
   );
 
@@ -152,7 +152,6 @@ export async function getNoteBySlug(slug: string) {
   `;
 
   const data = await fetchGraphQL(query, { slug });
-  console.log(data.notesCollection.items[0]);
   return data.notesCollection.items[0] || null;
 }
 

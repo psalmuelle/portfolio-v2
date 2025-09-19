@@ -6,6 +6,7 @@ import { generateArticleSchema } from '@/utils/structuredData';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { notFound } from 'next/navigation';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { options } from '@/utils/notesContentFormatter';
 
 export async function generateStaticParams() {
   try {
@@ -169,13 +170,13 @@ export default async function NotePage(props: {
           <article className="prose prose-lg max-w-none">
             <div className="text-primary-900 mt-6 text-lg">
               {note.description && (
-                <p className="lead mb-8 text-xl font-medium">
+                <p className="lead mb-8 text-lg font-medium">
                   {note.description}
                 </p>
               )}
               {note.content ? (
                 <div>
-                  {documentToReactComponents(note.content.json)}
+                  {documentToReactComponents(note.content.json, options)}
                 </div>
               ) : (
                 <div>
@@ -187,25 +188,19 @@ export default async function NotePage(props: {
                   <ul className="mt-4 list-disc pl-6">
                     <li>
                       Browse other{' '}
-                      <Link
-                        href="/notes"
-                        className="text-blue-500 hover:underline"
-                      >
+                      <Link href="/notes" className="underline">
                         notes
                       </Link>
                     </li>
                     <li>
                       Check out my{' '}
-                      <Link
-                        href="/projects"
-                        className="text-blue-500 hover:underline"
-                      >
+                      <Link href="/projects" className="underline">
                         projects
                       </Link>
                     </li>
                     <li>
                       Learn more{' '}
-                      <Link href="/" className="text-blue-500 hover:underline">
+                      <Link href="/" className="underline">
                         about me
                       </Link>
                     </li>
