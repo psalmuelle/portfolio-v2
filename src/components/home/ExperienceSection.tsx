@@ -1,6 +1,7 @@
 import Section from './Section';
 import formatDate from '@/utils/dateFormatter';
 import { ExperienceProps } from '@/utils/types';
+import { parseDescriptionToList } from '@/utils/textParser';
 
 interface WorkExperienceSectionProps {
   workExperience: ExperienceProps[];
@@ -37,7 +38,7 @@ export default function WorkExperienceSection({
                   </p>
                 </div>
                 <div className="bg-primary-100 mt-2 rounded-xl p-4 text-sm">
-                  {experience?.description}
+                  {parseDescriptionToList(experience?.description)}
                 </div>
               </div>
             </div>
