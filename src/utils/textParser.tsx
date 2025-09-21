@@ -16,8 +16,8 @@ export const parseDescriptionToList = (
 
   // Split by dashes and clean up the text
   const items = description
-    .split(/\s*-\s*/) // Split by dash with optional whitespace
-    .map((item) => item.trim()) // Remove extra whitespace
+    .split(/(?=- [A-Z])/) // Split before dash followed by space and capital letter
+    .map((item) => item.replace(/^- /, '').trim()) // Remove leading dash and space, then trim
     .filter((item) => item.length > 0); // Remove empty items
 
   if (items.length > 1) {
