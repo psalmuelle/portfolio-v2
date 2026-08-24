@@ -1,0 +1,70 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "Milo Ferris" [ref=f1e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f1e5]:
+        - generic [ref=f1e6]: Open to full-time and contract work
+        - generic [ref=f1e7]: /
+        - link "hello@miloferris.com" [ref=f1e8] [cursor=pointer]:
+          - /url: mailto:hello@miloferris.com
+        - button "Copy" [ref=f1e9] [cursor=pointer]
+  - main [ref=f1e11]:
+    - link "Back to Homepage" [ref=f1e12] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f1e13]:
+      - generic [ref=f1e14]:
+        - generic [ref=f1e15]: Pulse Health
+        - generic [ref=f1e16]: /
+        - generic [ref=f1e17]: "2026"
+      - heading "Pulse - Daily Health Tracking" [level=2] [ref=f1e18]
+      - paragraph [ref=f1e19]: Redesigning a health tracking app used by 500K+ people to make daily logging feel effortless instead of like a chore.
+    - img "Pulse health tracking app on a mobile phone" [ref=f1e22]
+    - generic [ref=f1e23]:
+      - generic [ref=f1e24]:
+        - paragraph [ref=f1e25]: Pulse asked me to rework their core logging flow after user research showed most people stopped tracking within the first two weeks. The original flow required six taps to log a single meal, and the interface leaned heavily on data density over clarity. I rebuilt the flow around a single home screen with quick-add gestures, cutting the average logging time from 40 seconds to under 10.
+        - paragraph [ref=f1e26]: I worked closely with the two founding engineers to make sure every interaction translated cleanly into SwiftUI, prototyping key transitions in ProtoPie before handoff so motion timing was locked before development started. The result shipped in under six weeks from first wireframe to App Store release.
+      - generic [ref=f1e27]:
+        - heading "Project goal:" [level=4] [ref=f1e28]
+        - heading "Logging a meal now takes just 9 seconds, not 40. Fast beats fancy, every single time still." [level=4] [ref=f1e29]
+      - generic [ref=f1e30]:
+        - generic [ref=f1e31]:
+          - heading "Client" [level=4] [ref=f1e32]
+          - paragraph [ref=f1e33]: Pulse Health
+        - generic [ref=f1e34]:
+          - heading "Year" [level=4] [ref=f1e35]
+          - paragraph [ref=f1e36]: "2026"
+        - generic [ref=f1e37]:
+          - heading "Stack" [level=4] [ref=f1e38]
+          - paragraph [ref=f1e39]: Figma, ProtoPie, SwiftUI, Whimsical
+      - link "See it live" [ref=f1e40] [cursor=pointer]:
+        - /url: https://www.apple.com/app-store/
+    - link "Back to Homepage" [ref=f1e43] [cursor=pointer]:
+      - /url: /
+  - contentinfo [ref=f1e44]:
+    - generic [ref=f1e45]:
+      - generic [ref=f1e46]:
+        - heading "Milo Ferris" [level=4] [ref=f1e47]
+        - paragraph [ref=f1e48]: Open to full-time and contract work
+      - generic [ref=f1e49]:
+        - link "hello@miloferris.com" [ref=f1e50] [cursor=pointer]:
+          - /url: mailto:hello@miloferris.com
+        - button "Copy" [ref=f1e51] [cursor=pointer]
+    - generic [ref=f1e53]:
+      - generic [ref=f1e54]:
+        - link "X" [ref=f1e56] [cursor=pointer]:
+          - /url: https://x.com/
+        - generic [ref=f1e57]:
+          - generic [ref=f1e58]: /
+          - link "LinkedIn" [ref=f1e59] [cursor=pointer]:
+            - /url: https://linkedin.com
+        - generic [ref=f1e60]:
+          - generic [ref=f1e61]: /
+          - link "Dribbble" [ref=f1e62] [cursor=pointer]:
+            - /url: https://dribbble.com
+        - generic [ref=f1e63]:
+          - generic [ref=f1e64]: /
+          - link "Behance" [ref=f1e65] [cursor=pointer]:
+            - /url: https://behance.net
+      - paragraph [ref=f1e66]: © 2026 Milo Ferris
+  - alert [ref=f1e67]

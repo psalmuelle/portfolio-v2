@@ -1,0 +1,182 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Milo Ferris" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]:
+        - generic [ref=e6]: Open to full-time and contract work
+        - generic [ref=e7]: /
+        - link "hello@miloferris.com" [ref=e8] [cursor=pointer]:
+          - /url: mailto:hello@miloferris.com
+        - button "Copy" [ref=e9] [cursor=pointer]
+  - main [ref=e11]:
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - img "grayscale photo of man facing right" [ref=e15]
+        - heading "Milo Ferris" [level=1] [ref=e16]
+      - paragraph [ref=e17]: I design mobile apps people actually want to open every day.
+      - paragraph [ref=e18]: Currently designing at Linear. Open to advisory roles.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: Berlin, Germany
+          - generic [ref=e22]: /
+          - generic [ref=e23]: English, German
+        - generic [ref=e24]:
+          - link "X" [ref=e26] [cursor=pointer]:
+            - /url: https://x.com/
+          - generic [ref=e27]:
+            - generic [ref=e28]: /
+            - link "LinkedIn" [ref=e29] [cursor=pointer]:
+              - /url: https://linkedin.com
+          - generic [ref=e30]:
+            - generic [ref=e31]: /
+            - link "Dribbble" [ref=e32] [cursor=pointer]:
+              - /url: https://dribbble.com
+          - generic [ref=e33]:
+            - generic [ref=e34]: /
+            - link "Behance" [ref=e35] [cursor=pointer]:
+              - /url: https://behance.net
+    - generic [ref=e36]:
+      - heading "About" [level=3] [ref=e37]
+      - generic [ref=e38]:
+        - paragraph [ref=e39]: "I'm a mobile app designer with 7 years of experience shaping iOS and Android products used by millions, from early-stage startups to teams shipping at scale. My focus is native feel: interfaces that respect platform conventions, motion that feels inevitable rather than decorative, and flows that hold up under real thumbs on real screens."
+        - paragraph [ref=e40]: I've led design for consumer, fintech, and health apps, working closely with engineers to ship features that translate cleanly into SwiftUI and Jetpack Compose. I care as much about the App Store listing and onboarding funnel as I do about the core product, since a beautifully designed screen nobody opens twice isn't a win.
+        - paragraph [ref=e41]: I'm based in Berlin, available for full-time and contract work, and open to remote roles with teams who ship fast and sweat the details.
+    - generic [ref=e42]:
+      - heading "Tools" [level=3] [ref=e43]
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - heading "Design & Wireframing" [level=4] [ref=e46]
+          - list [ref=e47]:
+            - listitem [ref=e48]: Figma
+            - listitem [ref=e49]: Galileo AI
+            - listitem [ref=e50]: Motiff
+        - generic [ref=e51]:
+          - heading "Prototyping & Motion" [level=4] [ref=e52]
+          - list [ref=e53]:
+            - listitem [ref=e54]: ProtoPie
+            - listitem [ref=e55]: Principle
+            - listitem [ref=e56]: Lottie
+        - generic [ref=e57]:
+          - heading "Building & Shipping" [level=4] [ref=e58]
+          - list [ref=e59]:
+            - listitem [ref=e60]: Cursor
+            - listitem [ref=e61]: Xcode
+            - listitem [ref=e62]: GitHub Copilot
+    - generic [ref=e63]:
+      - heading "Portfolio" [level=3] [ref=e64]
+      - generic [ref=e65]:
+        - link "Pulse health tracking app on a mobile phone Pulse - Daily Health Tracking Redesigning a health tracking app used by 500K+ people to make daily logging feel effortless instead of like a chore. Pulse Health / 2026" [ref=e66] [cursor=pointer]:
+          - /url: /portfolio/pulse-daily-health-tracking
+          - img "Pulse health tracking app on a mobile phone" [ref=e67]
+          - heading "Pulse - Daily Health Tracking" [level=4] [ref=e68]
+          - paragraph [ref=e69]: Redesigning a health tracking app used by 500K+ people to make daily logging feel effortless instead of like a chore.
+          - generic [ref=e70]:
+            - generic [ref=e71]: Pulse Health
+            - generic [ref=e72]: /
+            - generic [ref=e73]: "2026"
+        - link "Northbound banking app interface on a mobile phone Northbound - Mobile Banking Redesign A full redesign of a regional bank’s mobile app, focused on rebuilding trust through clarity rather than decoration. Northbound Bank / 2025" [ref=e74] [cursor=pointer]:
+          - /url: /portfolio/northbound-mobile-banking-redesign
+          - img "Northbound banking app interface on a mobile phone" [ref=e75]
+          - heading "Northbound - Mobile Banking Redesign" [level=4] [ref=e76]
+          - paragraph [ref=e77]: A full redesign of a regional bank’s mobile app, focused on rebuilding trust through clarity rather than decoration.
+          - generic [ref=e78]:
+            - generic [ref=e79]: Northbound Bank
+            - generic [ref=e80]: /
+            - generic [ref=e81]: "2025"
+        - link "Fernweh travel planning app on a mobile phone Fernweh - Travel Planning App Zero-to-one design for a trip planning app that turns scattered bookings into a single visual itinerary. Fernweh / 2025" [ref=e82] [cursor=pointer]:
+          - /url: /portfolio/fernweh-travel-planning-app
+          - img "Fernweh travel planning app on a mobile phone" [ref=e83]
+          - heading "Fernweh - Travel Planning App" [level=4] [ref=e84]
+          - paragraph [ref=e85]: Zero-to-one design for a trip planning app that turns scattered bookings into a single visual itinerary.
+          - generic [ref=e86]:
+            - generic [ref=e87]: Fernweh
+            - generic [ref=e88]: /
+            - generic [ref=e89]: "2025"
+        - link "Grain recipe app interface on a mobile phone Grain - Recipe & Meal Planning Redesigning a meal planning app’s onboarding to get new users to their first saved recipe in under a minute. Grain Kitchen / 2024" [ref=e90] [cursor=pointer]:
+          - /url: /portfolio/grain-recipe-meal-planning
+          - img "Grain recipe app interface on a mobile phone" [ref=e91]
+          - heading "Grain - Recipe & Meal Planning" [level=4] [ref=e92]
+          - paragraph [ref=e93]: Redesigning a meal planning app’s onboarding to get new users to their first saved recipe in under a minute.
+          - generic [ref=e94]:
+            - generic [ref=e95]: Grain Kitchen
+            - generic [ref=e96]: /
+            - generic [ref=e97]: "2024"
+        - link "Fieldnote voice notes app on a mobile phone Fieldnote - AI Voice Notes Designing a voice-to-text note app built around AI summarization, made for people who think out loud. Fieldnote / 2026" [ref=e98] [cursor=pointer]:
+          - /url: /portfolio/fieldnote-ai-voice-notes
+          - img "Fieldnote voice notes app on a mobile phone" [ref=e99]
+          - heading "Fieldnote - AI Voice Notes" [level=4] [ref=e100]
+          - paragraph [ref=e101]: Designing a voice-to-text note app built around AI summarization, made for people who think out loud.
+          - generic [ref=e102]:
+            - generic [ref=e103]: Fieldnote
+            - generic [ref=e104]: /
+            - generic [ref=e105]: "2026"
+        - link "Lockstep fitness challenge app visual Lockstep - Team Fitness Challenges A social fitness app redesign focused on making group challenges feel competitive without feeling stressful. Lockstep / 2024" [ref=e106] [cursor=pointer]:
+          - /url: /portfolio/lockstep-team-fitness-challenges
+          - img "Lockstep fitness challenge app visual" [ref=e107]
+          - heading "Lockstep - Team Fitness Challenges" [level=4] [ref=e108]
+          - paragraph [ref=e109]: A social fitness app redesign focused on making group challenges feel competitive without feeling stressful.
+          - generic [ref=e110]:
+            - generic [ref=e111]: Lockstep
+            - generic [ref=e112]: /
+            - generic [ref=e113]: "2024"
+    - generic [ref=e114]:
+      - heading "Work History" [level=3] [ref=e115]
+      - generic [ref=e116]:
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - heading "Linear" [level=4] [ref=e119]
+            - heading / [level=4] [ref=e120]
+            - heading "Senior Product Designer" [level=4] [ref=e121]
+            - paragraph [ref=e122]: Mar 2023 - Present
+          - generic [ref=e123]:
+            - paragraph [ref=e124]: Led end-to-end product design for core issue tracking experience, used by 100,000+ teams globally.
+            - paragraph [ref=e125]: Built and shipped a redesigned onboarding flow in 4 days using Figma + Cursor, reducing drop-off by 34%.
+            - paragraph [ref=e126]: Introduced AI-assisted design QA process, reducing review cycles from 3 days to 4 hours.
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - heading "Revolut" [level=4] [ref=e129]
+            - heading / [level=4] [ref=e130]
+            - heading "Product Designer" [level=4] [ref=e131]
+            - paragraph [ref=e132]: Jun 2021 - Feb 2023
+          - generic [ref=e133]:
+            - paragraph [ref=e134]: Owned product design for the Savings and Investments vertical across iOS and Android.
+            - paragraph [ref=e135]: Redesigned the mobile payments flow, increasing transaction completion rate by 22% within 60 days of launch.
+            - paragraph [ref=e136]: Used Perplexity and Claude to synthesize 200+ user interviews into actionable design briefs in hours, not weeks.
+        - generic [ref=e137]:
+          - generic [ref=e138]:
+            - heading "Pitch" [level=4] [ref=e139]
+            - heading / [level=4] [ref=e140]
+            - heading "Lead Product Designer" [level=4] [ref=e141]
+            - paragraph [ref=e142]: Sep 2019 - May 2021
+          - generic [ref=e143]:
+            - paragraph [ref=e144]: First designer on the team, responsible for building the design system and core product experience from scratch.
+            - paragraph [ref=e145]: Designed the end-to-end seller onboarding experience, cutting time-to-first-listing from 14 days to 3.
+            - paragraph [ref=e146]: Prototyped and validated 3 new product concepts using Maze and Figma in under 2 weeks each.
+  - contentinfo [ref=e147]:
+    - generic [ref=e148]:
+      - generic [ref=e149]:
+        - heading "Milo Ferris" [level=4] [ref=e150]
+        - paragraph [ref=e151]: Open to full-time and contract work
+      - generic [ref=e152]:
+        - link "hello@miloferris.com" [ref=e153] [cursor=pointer]:
+          - /url: mailto:hello@miloferris.com
+        - button "Copy" [ref=e154] [cursor=pointer]
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - link "X" [ref=e159] [cursor=pointer]:
+          - /url: https://x.com/
+        - generic [ref=e160]:
+          - generic [ref=e161]: /
+          - link "LinkedIn" [ref=e162] [cursor=pointer]:
+            - /url: https://linkedin.com
+        - generic [ref=e163]:
+          - generic [ref=e164]: /
+          - link "Dribbble" [ref=e165] [cursor=pointer]:
+            - /url: https://dribbble.com
+        - generic [ref=e166]:
+          - generic [ref=e167]: /
+          - link "Behance" [ref=e168] [cursor=pointer]:
+            - /url: https://behance.net
+      - paragraph [ref=e169]: © 2026 Milo Ferris
+  - alert [ref=e170]

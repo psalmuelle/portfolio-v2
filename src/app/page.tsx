@@ -1,144 +1,106 @@
-import { Metadata } from 'next';
-import ContactSection from '@/components/home/ContactSection';
-import WorkExperienceSection from '@/components/home/ExperienceSection';
-import ProjectSection from '@/components/home/ProjectSection';
-import { getProjects, getWorkExperience } from '@/lib/graphql/server';
-import {
-  generatePersonSchema,
-  generateWebsiteSchema,
-} from '@/utils/structuredData';
-import { ProjectProps } from '@/utils/types';
 import Link from 'next/link';
+import Reveal from '@/components/Reveal';
+import Parallax from '@/components/Parallax';
+import { aboutParagraphs, avatar, projects, socialLinks, tools, workHistory } from '@/data';
 
-export const metadata: Metadata = {
-  title: 'Erinle Sam - Frontend Engineer',
-  description:
-    'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies. Explore my portfolio of innovative web and mobile applications.',
-  keywords: [
-    'frontend engineer',
-    'React developer',
-    'Next.js developer',
-    'React Native developer',
-    'web development',
-    'mobile development',
-    'JavaScript expert',
-    'TypeScript',
-    'UI/UX design',
-    'full-stack developer',
-    'portfolio',
-  ],
-  authors: [{ name: 'Erinle Samuel', url: 'https://erinlesam.com' }],
-  openGraph: {
-    title: 'Erinle Sam - Frontend Engineer & React Specialist',
-    description:
-      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building sleek, user-friendly interfaces with modern web technologies. Explore my portfolio of web and mobile applications.',
-    type: 'website',
-    url: 'https://erinlesam.com',
-    images: [
-      {
-        url: '/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Erinle Sam - Frontend Engineer Portfolio',
-      },
-    ],
-    siteName: 'Erinle Sam Portfolio',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Erinle Sam - Frontend Engineer & React Specialist',
-    description:
-      'Frontend Engineer specializing in React.js, Next.js, and React Native. Building innovative web and mobile applications.',
-    images: ['/opengraph-image.png'],
-    creator: '@your_twitter_handle', // Replace with actual handle
-  },
-  alternates: {
-    canonical: 'https://erinlesam.com',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  category: 'technology',
-};
-
-export default async function Home() {
-  const [projects, workExperience] = await Promise.all([
-    getProjects(),
-    getWorkExperience(),
-  ]);
-
-  const personSchema = generatePersonSchema();
-  const websiteSchema = generateWebsiteSchema();
-
-  // Portfolio showcase structured data
-  const portfolioSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Frontend Development Portfolio',
-    description: 'A showcase of web and mobile development projects',
-    numberOfItems: projects.length,
-    itemListElement: projects
-      .slice(0, 6)
-      .map((project: ProjectProps, index: number) => ({
-        '@type': 'CreativeWork',
-        position: index + 1,
-        name: project.title,
-        description: project.description,
-        author: {
-          '@type': 'Person',
-          name: 'Erinle Samuel',
-        },
-        genre: 'Software Development',
-        keywords: project.techStack,
-      })),
-  };
-
+export default function Home() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}
-      />
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-        <hgroup className="text-center">
-          <h1 className="font-clash text-6xl tracking-wider max-sm:text-4xl">
-            Erinle Samuel
-          </h1>
-          <p className="mt-2 text-xl font-medium">
-            Frontend Engineer | React.js & React Native
-          </p>
-          <p className="mx-auto mt-4 max-w-3xl text-neutral-600">
-            A frontend developer, and javascript engineer. I spend most of my
-            time bringing{' '}
-            <Link href={'/projects'} className="text-primary-900 font-semibold">
-              #IDEAS
-            </Link>{' '}
-            to life! I love building sleek, user-friendly interfaces that are
-            both visually sharp and easy to use.
-          </p>
-        </hgroup>
-        <hr className="text-primary-900 mt-10 md:mt-12" />
-        <div>
-          <ProjectSection projects={projects} />
+    <main className="page">
+      <Reveal as="section" className="section hero">
+        <div className="hero-row">
+          <Parallax distance={22}>
+            <img className="hero-avatar" src={avatar.src} alt={avatar.alt} />
+          </Parallax>
+          <h1 className="hero-name">Milo Ferris</h1>
         </div>
-        <div>
-          <WorkExperienceSection workExperience={workExperience} />
+        <p className="hero-tagline">
+          I design mobile apps people actually want to open every day.
+        </p>
+        <p className="hero-sub">Currently designing at Linear. Open to advisory roles.</p>
+        <div className="hero-meta">
+          <div className="meta-group">
+            <span>Berlin, Germany</span>
+            <span className="meta-sep">/</span>
+            <span>English, German</span>
+          </div>
+          <div className="meta-group">
+            {socialLinks.map((s, i) => (
+              <span key={s.label} style={{ display: 'contents' }}>
+                {i > 0 && <span className="meta-sep">/</span>}
+                <a href={s.href} target="_blank" rel="noreferrer">
+                  {s.label}
+                </a>
+              </span>
+            ))}
+          </div>
         </div>
-        <div>
-          <ContactSection />
-        </div>
+      </Reveal>
 
-        <div className="mt-36" />
-      </div>
-    </>
+      <Reveal as="section" className="section">
+        <h3 className="section-title">About</h3>
+        <div className="about-body">
+          {aboutParagraphs.map((p) => (
+            <p key={p.slice(0, 32)}>{p}</p>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="section">
+        <h3 className="section-title">Tools</h3>
+        <div className="tools-grid">
+          {tools.map((t) => (
+            <div className="tool-group" key={t.group}>
+              <h4>{t.group}</h4>
+              <ul>
+                {t.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="section">
+        <h3 className="section-title">Portfolio</h3>
+        <div className="portfolio-grid">
+          {projects.map((p) => (
+            <Link className="project-card" href={`/portfolio/${p.slug}`} key={p.slug}>
+              <img className="project-thumb" src={p.heroImage} alt={p.heroAlt} />
+              <h4 className="project-title-small">{p.title}</h4>
+              <p className="project-desc">{p.subtitle}</p>
+              <div className="project-meta">
+                <span>{p.client}</span>
+                <span className="meta-sep">/</span>
+                <span>{p.year}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="section">
+        <h3 className="section-title">Work History</h3>
+        <div className="jobs">
+          {workHistory.map((job) => (
+            <div className="job" key={job.company}>
+              <div className="job-head">
+                <h4 className="job-company">{job.company}</h4>
+                <h4 className="job-sep">/</h4>
+                <h4 className="job-role">{job.role}</h4>
+                <p className="job-period">
+                  {job.period[0]} - {job.period[1]}
+                </p>
+              </div>
+              <div className="job-desc">
+                {job.description.map((sentence) => (
+                  <p key={sentence.slice(0, 32)}>{sentence}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Reveal>
+    </main>
   );
 }
