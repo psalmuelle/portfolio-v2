@@ -1,12 +1,15 @@
 :root {
   --bg: #f5f1ea;
   --ink: #1f1b16;
+  --orange: #d97757;
   --muted: #6b655c;
   --line: #e4ded3;
   --cream: #f5f1ea;
 
   --serif: var(--font-fraunces), Georgia, 'Times New Roman', serif;
-  --sans: var(--font-public-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sans:
+    var(--font-public-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, sans-serif;
 
   --container: 880px;
   --text-col: 720px;
@@ -76,6 +79,7 @@ img {
   right: 0;
   z-index: 50;
   padding: 16px 24px;
+  border-bottom: 1px solid var(--line);
   background: var(--bg);
 }
 
@@ -90,7 +94,7 @@ img {
 
 .nav-brand {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 22px;
   line-height: 28px;
   letter-spacing: -0.18px;
   color: var(--ink);
@@ -114,18 +118,21 @@ img {
 
 .nav-email {
   color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .copy-btn {
   display: inline-flex;
   align-items: center;
   padding: 4px 12px;
-  background: var(--ink);
+  background: var(--orange);
   color: var(--cream);
   border: none;
-  border-radius: 0;
+  border-radius: 999px;
   font-family: var(--sans);
   font-size: 14px;
+  font-weight: 500;
   line-height: 22px;
   cursor: pointer;
 }
@@ -212,6 +219,8 @@ img {
   height: 96px;
   flex: 0 0 auto;
   object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 16px;
 }
 
 .hero-name {

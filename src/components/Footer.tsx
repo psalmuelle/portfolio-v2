@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-brand">
-          <h4>Milo Ferris</h4>
+          <h4>Erinle Samuel</h4>
           <p>Open to full-time and contract work</p>
         </div>
         <div className="footer-email">
@@ -25,7 +25,7 @@ export default function Footer() {
             </span>
           ))}
         </div>
-        <p className="footer-copy">© 2026 Milo Ferris</p>
+        <p className="footer-copy">© 2026 Erinle Samuel</p>
       </div>
     </footer>
   );

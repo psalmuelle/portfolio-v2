@@ -1,27 +1,38 @@
 import Link from 'next/link';
 import Reveal from '@/components/Reveal';
-import Parallax from '@/components/Parallax';
-import { aboutParagraphs, avatar, projects, socialLinks, tools, workHistory } from '@/data';
+import {
+  aboutParagraphs,
+  avatar,
+  projects,
+  socialLinks,
+  tools,
+  workHistory,
+} from '@/data';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <main className="page">
       <Reveal as="section" className="section hero">
         <div className="hero-row">
-          <Parallax distance={22}>
-            <img className="hero-avatar" src={avatar.src} alt={avatar.alt} />
-          </Parallax>
-          <h1 className="hero-name">Milo Ferris</h1>
+          <Image
+            className="hero-avatar"
+            src={avatar.src}
+            alt={avatar.alt}
+            width={96}
+            height={96}
+          />
+          <h1 className="hero-name">Erinle Samuel</h1>
         </div>
         <p className="hero-tagline">
           I design mobile apps people actually want to open every day.
         </p>
-        <p className="hero-sub">Currently designing at Linear. Open to advisory roles.</p>
+        <p className="hero-sub">
+          Currently designing at Linear. Open to advisory roles.
+        </p>
         <div className="hero-meta">
           <div className="meta-group">
-            <span>Berlin, Germany</span>
-            <span className="meta-sep">/</span>
-            <span>English, German</span>
+            <span>Lagos, Nigeria</span>
           </div>
           <div className="meta-group">
             {socialLinks.map((s, i) => (
@@ -65,8 +76,16 @@ export default function Home() {
         <h3 className="section-title">Portfolio</h3>
         <div className="portfolio-grid">
           {projects.map((p) => (
-            <Link className="project-card" href={`/portfolio/${p.slug}`} key={p.slug}>
-              <img className="project-thumb" src={p.heroImage} alt={p.heroAlt} />
+            <Link
+              className="project-card"
+              href={`/portfolio/${p.slug}`}
+              key={p.slug}
+            >
+              <img
+                className="project-thumb"
+                src={p.heroImage}
+                alt={p.heroAlt}
+              />
               <h4 className="project-title-small">{p.title}</h4>
               <p className="project-desc">{p.subtitle}</p>
               <div className="project-meta">

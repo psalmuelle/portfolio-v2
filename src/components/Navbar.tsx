@@ -7,7 +7,7 @@ export default function Navbar() {
     <header className="nav">
       <div className="nav-inner">
         <Link className="nav-brand" href="/">
-          Milo Ferris
+          Erinle Samuel
         </Link>
         <div className="nav-right">
           <span className="nav-status">Open to full-time and contract work</span>

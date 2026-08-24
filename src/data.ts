@@ -29,8 +29,8 @@ export const socialLinks: { label: string; href: string }[] = [
 ];
 
 export const avatar = {
-  src: 'https://framerusercontent.com/images/smKkfurp6aeYqmhJBIuIxCgHLo.jpg?width=4000&height=6000',
-  alt: 'grayscale photo of man facing right',
+  src: '/erinle-samuel.jpg',
+  alt: 'a photo of erinle samuel',
 };
 
 const IMG = {
