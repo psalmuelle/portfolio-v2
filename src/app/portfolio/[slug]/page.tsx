@@ -1,9 +1,14 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Reveal from '@/components/Reveal';
 import Parallax from '@/components/Parallax';
 import { projectForSlug, projects } from '@/data';
+
+// TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
+// See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
+export const instant = false;
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -50,7 +55,13 @@ export default async function ProjectPage({
 
       <Reveal>
         <Parallax className="project-hero-frame" distance={44}>
-          <img className="project-hero" src={project.heroImage} alt={project.heroAlt} />
+          <Image
+            className="project-hero"
+            src={project.heroImage}
+            alt={project.heroAlt}
+            width={1056}
+            height={672}
+          />
         </Parallax>
       </Reveal>
 
@@ -86,12 +97,6 @@ export default async function ProjectPage({
         >
           See it live
         </a>
-      </Reveal>
-
-      <Reveal className="screenshots">
-        {project.screenshots.map((src) => (
-          <img key={src} src={src} alt="" />
-        ))}
       </Reveal>
 
       <div className="project-back">

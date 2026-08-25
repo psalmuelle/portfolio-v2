@@ -2,6 +2,7 @@
   --bg: #f5f1ea;
   --ink: #1f1b16;
   --orange: #d97757;
+  --light-orange: #f2ede4;
   --muted: #6b655c;
   --line: #e4ded3;
   --cream: #f5f1ea;
@@ -20,10 +21,12 @@
 }
 
 html {
+  position: relative;
   scroll-behavior: smooth;
 }
 
 body {
+  position: relative;
   margin: 0;
   background: var(--bg);
   color: var(--ink);
@@ -69,6 +72,31 @@ img {
   transform-origin: 0 50%;
   background: var(--ink);
   z-index: 100;
+}
+
+.smooth-scroll-content {
+  position: fixed;
+  inset: 0 0 auto;
+  width: 100%;
+  min-height: 100%;
+  will-change: transform;
+}
+
+.smooth-scroll-spacer {
+  width: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 809px), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .smooth-scroll-content {
+    position: static;
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .smooth-scroll-spacer {
+    display: none;
+  }
 }
 
 /* ---------- Navbar ---------- */
@@ -173,6 +201,13 @@ img {
   width: 24px;
   height: 2px;
   background: var(--ink);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+.nav-mobile {
+  display: none;
 }
 
 /* ---------- Layout ---------- */
@@ -318,6 +353,7 @@ img {
   width: 100%;
   aspect-ratio: 416 / 264;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .project-title-small {
@@ -398,13 +434,28 @@ img {
 }
 
 .job-desc {
-  margin-left: 30px;
+  margin-left: 8px;
   max-width: 586px;
   margin-top: 16px;
 }
 
 .job-desc p {
+  position: relative;
+  padding-left: 24px;
   color: var(--muted);
+}
+
+.job-desc p::before {
+  content: '';
+  list-style-type: disc;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  border: 1px solid var(--muted);
+  border-radius: 999px;
+  background: var(--muted);
 }
 
 .job-desc p + p {
@@ -413,17 +464,20 @@ img {
 
 /* ---------- Footer ---------- */
 .footer {
+  background: var(--light-orange);
+}
+
+.footer-wrapper {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 96px 0 48px;
-  border-top: 1px solid var(--line);
+  padding: 52px 0 24px;
 }
 
 .footer-top {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 
@@ -445,6 +499,7 @@ img {
   gap: 16px;
   font-size: 16px;
   line-height: 26px;
+  font-weight: 600;
 }
 
 .footer-email a {
@@ -457,6 +512,8 @@ img {
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
 }
 
 .footer-social {
@@ -466,6 +523,7 @@ img {
   font-size: 14px;
   line-height: 22px;
   color: var(--ink);
+  font-weight: 600;
 }
 
 .footer-social .meta-sep {
@@ -605,19 +663,6 @@ img {
   margin-bottom: 72px;
 }
 
-.screenshots {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
-  margin-bottom: 72px;
-}
-
-.screenshots img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-}
-
 .project-back {
   text-align: center;
 }
@@ -684,6 +729,52 @@ img {
     display: flex;
   }
 
+  .nav[data-open] .nav-burger span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav[data-open] .nav-burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav[data-open] .nav-burger span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-mobile {
+    display: flex;
+    max-width: var(--container);
+    margin: 16px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
+  }
+
+  .nav-mobile-status {
+    color: var(--muted);
+  }
+
+  .nav-mobile-email {
+    width: fit-content;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .nav-mobile .copy-btn {
+    width: fit-content;
+  }
+
+  .nav-mobile-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding-top: 4px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
   .hero-row {
     flex-direction: column;
     gap: 16px;
@@ -732,11 +823,6 @@ img {
   .project-hero-frame {
     height: 320px;
     max-width: 100%;
-  }
-
-  .screenshots {
-    grid-template-columns: 1fr;
-    gap: 24px;
   }
 
   .project-details {

@@ -25,20 +25,31 @@ export default function Home() {
           <h1 className="hero-name">Erinle Samuel</h1>
         </div>
         <p className="hero-tagline">
-          I design mobile apps people actually want to open every day.
+          I build reliable web and mobile applications across frontend and
+          backend systems.
         </p>
         <p className="hero-sub">
-          Currently designing at Linear. Open to advisory roles.
+          Software Engineer at Fieldsub. Focused on practical systems that
+          scale.
         </p>
         <div className="hero-meta">
           <div className="meta-group">
-            <span>Lagos, Nigeria</span>
+            <span>Frontend & Backend</span>
+            <span className="meta-sep">/</span>
+            <span>Systems Design</span>
+            <span className="meta-sep">/</span>
+            <span>DevOps</span>
           </div>
           <div className="meta-group">
             {socialLinks.map((s, i) => (
               <span key={s.label} style={{ display: 'contents' }}>
                 {i > 0 && <span className="meta-sep">/</span>}
-                <a href={s.href} target="_blank" rel="noreferrer">
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontWeight: 600 }}
+                >
                   {s.label}
                 </a>
               </span>
@@ -81,10 +92,12 @@ export default function Home() {
               href={`/portfolio/${p.slug}`}
               key={p.slug}
             >
-              <img
+              <Image
                 className="project-thumb"
                 src={p.heroImage}
                 alt={p.heroAlt}
+                width={416}
+                height={264}
               />
               <h4 className="project-title-small">{p.title}</h4>
               <p className="project-desc">{p.subtitle}</p>

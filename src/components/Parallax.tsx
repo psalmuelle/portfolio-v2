@@ -27,7 +27,7 @@ export default function Parallax({ children, className = '', distance = 40 }: Pa
   const y = useTransform(smooth, [0, 1], prefersReducedMotion ? [0, 0] : [distance, -distance]);
 
   return (
-    <motion.div ref={ref} className={className} style={{ y }}>
+    <motion.div ref={ref} className={className} style={{ position: 'relative', y }}>
       {children}
     </motion.div>
   );

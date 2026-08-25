@@ -9,7 +9,6 @@ export interface Project {
   paragraphs: [string, string];
   goal: string;
   stack: string;
-  screenshots: string[];
 }
 
 export interface Job {
@@ -22,10 +21,10 @@ export interface Job {
 export const contactEmail = 'hello@erinlesam.com';
 
 export const socialLinks: { label: string; href: string }[] = [
-  { label: 'X', href: 'https://x.com/' },
-  { label: 'LinkedIn', href: 'https://linkedin.com' },
-  { label: 'Dribbble', href: 'https://dribbble.com' },
-  { label: 'Behance', href: 'https://behance.net' },
+  { label: 'X', href: 'https://x.com/erinle_sam' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/erinle-samuel/' },
+  { label: 'GitHub', href: 'https://github.com/psalmuelle' },
+  { label: 'Substack', href: 'https://substack.com/@erinlesam' },
 ];
 
 export const avatar = {
@@ -34,167 +33,144 @@ export const avatar = {
 };
 
 const IMG = {
-  pulse: 'https://framerusercontent.com/images/34dquia03YfiJgRmaaIE0yWOT88.jpg?width=1000&height=750',
-  northbound:
-    'https://framerusercontent.com/images/k4EYHumramBw9vamSO1bmdIcJRg.jpg?width=1000&height=684',
-  fernweh:
-    'https://framerusercontent.com/images/h5fSHyLUONZt60IPTsD4pOYP4.jpg?width=1000&height=667',
-  grain:
-    'https://framerusercontent.com/images/F5fm6TkxIIb3TSf2ZOOzwbupnXI.jpg?width=1000&height=778',
-  fieldnote:
-    'https://framerusercontent.com/images/MfrBJktHz5UYyoi3iFq95drFy0k.jpg?width=1000&height=667',
-  lockstep:
-    'https://framerusercontent.com/images/BkHWtg0VmKhwP96WyDsBzgZO1g.jpg?width=1000&height=778',
+  manyva: '/manyva-mockup.jpg',
+  fieldsub: '/fieldsub-mockup.png',
+  weboard: '/weboard-mockup.png',
+  ezyswap: '/ezyswap-mockup.png',
 };
 
 export const projects: Project[] = [
   {
-    slug: 'pulse-daily-health-tracking',
-    client: 'Pulse Health',
-    year: '2026',
-    title: 'Pulse - Daily Health Tracking',
+    slug: 'manyva-product-engineering',
+    client: 'personal project',
+    year: '2025 - Present',
+    title: 'Manyva - Video Marketing Platform',
     subtitle:
-      'Redesigning a health tracking app used by 500K+ people to make daily logging feel effortless instead of like a chore.',
-    heroImage: IMG.pulse,
-    heroAlt: 'Pulse health tracking app on a mobile phone',
+      'Building and maintaining reliable web and mobile application features across frontend and backend systems.',
+    heroImage: IMG.manyva,
+    heroAlt: 'Product engineering interface for fieldsub',
     paragraphs: [
-      'Pulse asked me to rework their core logging flow after user research showed most people stopped tracking within the first two weeks. The original flow required six taps to log a single meal, and the interface leaned heavily on data density over clarity. I rebuilt the flow around a single home screen with quick-add gestures, cutting the average logging time from 40 seconds to under 10.',
-      'I worked closely with the two founding engineers to make sure every interaction translated cleanly into SwiftUI, prototyping key transitions in ProtoPie before handoff so motion timing was locked before development started. The result shipped in under six weeks from first wireframe to App Store release.',
+      'At fieldsub, I work across frontend and backend systems to build, maintain, and improve product features. The work requires practical engineering decisions, reliable implementation, and a strong understanding of how different parts of an application fit together.',
+      'My focus is on software that remains maintainable as products grow: clear code, thoughtful API integration, performance improvements, and dependable debugging when production issues appear.',
     ],
-    goal: 'Logging a meal now takes just 9 seconds, not 40. Fast beats fancy, every single time still.',
-    stack: 'Figma, ProtoPie, SwiftUI, Whimsical',
-    screenshots: [IMG.northbound, IMG.fernweh, IMG.grain, IMG.fieldnote],
+    goal: 'Build reliable product features that can evolve without becoming harder to maintain.',
+    stack: 'Frontend, Backend, APIs, Debugging, Reliability',
   },
   {
-    slug: 'northbound-mobile-banking-redesign',
-    client: 'Northbound Bank',
-    year: '2025',
-    title: 'Northbound - Mobile Banking Redesign',
+    slug: 'fieldsub-field-service-mgmt-platform',
+    client: 'Fieldsub',
+    year: '2025 - Present',
+    title: 'Fieldsub - Field Service Mgmt. Platform',
     subtitle:
-      'A full redesign of a regional bank\u2019s mobile app, focused on rebuilding trust through clarity rather than decoration.',
-    heroImage: IMG.northbound,
-    heroAlt: 'Northbound banking app interface on a mobile phone',
+      'Building and maintaining web and mobile application features across frontend and backend systems.',
+    heroImage: IMG.fieldsub,
+    heroAlt: 'Fieldsub product interface',
     paragraphs: [
-      'Northbound came to me with an app that technically worked but tested poorly on trust, users described it as \u201ccluttered\u201d and \u201chard to find basic things\u201d in support tickets. I led a full audit of the information architecture, cutting the primary navigation from 7 tabs to 4 and rebuilding the account overview screen around a single clear balance hierarchy.',
-      'The biggest shift was moving transaction history from a dense table view to a scannable, grouped timeline. Support tickets related to \u201ccan\u2019t find X\u201d dropped noticeably within the first month post-launch, and the redesign became the base template for Northbound\u2019s business banking app six months later.',
+      'At Fieldsub, I work as a Software Engineer building and maintaining product features across frontend and backend systems. The role gives me room to think end-to-end about how product flows are designed, implemented, and supported in production.',
+      'My work focuses on API design and integration, debugging production issues, improving performance, and keeping application behavior reliable as the product grows.',
     ],
-    goal: '41% fewer support tickets in the first month. Clarity beats clutter, every time it matters.',
-    stack: 'Figma, Galileo AI, Principle, Cursor',
-    screenshots: [IMG.fernweh, IMG.grain, IMG.fieldnote, IMG.lockstep],
+    goal: 'Build reliable, maintainable features that support real product workflows across the stack.',
+    stack: 'Frontend, Backend, APIs, Performance, Reliability',
   },
   {
-    slug: 'fernweh-travel-planning-app',
-    client: 'Fernweh',
-    year: '2025',
-    title: 'Fernweh - Travel Planning App',
+    slug: 'weboard-hotel-booking-platform',
+    client: 'Weboard',
+    year: '2024 - 2025',
+    title: 'Weboard - Hotel Booking Platform',
     subtitle:
-      'Zero-to-one design for a trip planning app that turns scattered bookings into a single visual itinerary.',
-    heroImage: IMG.fernweh,
-    heroAlt: 'Fernweh travel planning app on a mobile phone',
+      'Helped build a hotel booking platform from the ground up as part of the founding engineering team.',
+    heroImage: IMG.weboard,
+    heroAlt: 'Weboard hotel booking platform interface',
     paragraphs: [
-      'Fernweh started as a two-person team with a strong idea and no design direction. I owned the product from first concept through App Store launch, designing the core itinerary view that automatically organizes flights, hotels, and activities into a day-by-day timeline pulled from forwarded confirmation emails.',
-      'The hardest problem was making a genuinely dense dataset, dozens of bookings across a multi-city trip, feel calm rather than overwhelming. I solved this with a map-first view as the default and pushed list details into a secondary layer, which testing showed people preferred by a wide margin over the original list-first approach.',
+      'At Weboard, I joined as part of the founding team and helped build the hotel booking platform from the ground up to production launch within 6 months.',
+      'I integrated payment gateways and booking APIs, improved frontend quality and testing practices, and analyzed user behavior with React and Google Analytics to identify bottlenecks in the booking experience.',
     ],
-    goal: '50,000 downloads in the first 90 days. One map beats ten different apps, every single time.',
-    stack: 'Figma, Whimsical, Lottie, Cursor',
-    screenshots: [IMG.pulse, IMG.grain, IMG.fieldnote, IMG.lockstep],
+    goal: 'Ship a production-ready booking platform with reliable payments, cleaner releases, and better user engagement.',
+    stack: 'React, Payment Gateways, Booking APIs, Testing, Google Analytics',
   },
   {
-    slug: 'grain-recipe-meal-planning',
-    client: 'Grain Kitchen',
-    year: '2024',
-    title: 'Grain - Recipe & Meal Planning',
+    slug: 'ezyswap-crypto-market-dashboard',
+    client: 'Ezyswap',
+    year: '2023',
+    title: 'Ezyswap - Crypto Market Dashboard',
     subtitle:
-      'Redesigning a meal planning app\u2019s onboarding to get new users to their first saved recipe in under a minute.',
-    heroImage: IMG.grain,
-    heroAlt: 'Grain recipe app interface on a mobile phone',
+      'Built frontend product features for real-time crypto data, SEO, testing, and performance improvements.',
+    heroImage: IMG.ezyswap,
+    heroAlt: 'Ezyswap crypto market dashboard interface',
     paragraphs: [
-      'Grain\u2019s original onboarding took new users through an 8-screen preference quiz before showing a single recipe, and drop-off during onboarding was their biggest growth blocker. I redesigned the flow to show real recipes within the first 15 seconds, moving preference collection into lightweight, optional filters layered on top of browsing rather than a gate in front of it.',
-      'I also rebuilt the recipe card component system to work across three contexts, browse grid, saved list, and full recipe view, with a single shared component instead of three separate builds, which cut engineering handoff time significantly.',
+      'At Ezyswap, I refactored key areas of the frontend codebase to improve maintainability and performance, while developing interactive chart UIs for real-time crypto asset prices.',
+      'I also implemented frontend SEO best practices and introduced unit tests with Jest, reaching 70% test coverage and helping reduce post-release issues.',
     ],
-    goal: 'Onboarding completion nearly doubled, from 34% to 68%. Recipes come first, questions later.',
-    stack: 'Figma, Galileo AI, Principle',
-    screenshots: [IMG.pulse, IMG.northbound, IMG.fieldnote, IMG.lockstep],
-  },
-  {
-    slug: 'fieldnote-ai-voice-notes',
-    client: 'Fieldnote',
-    year: '2026',
-    title: 'Fieldnote - AI Voice Notes',
-    subtitle:
-      'Designing a voice-to-text note app built around AI summarization, made for people who think out loud.',
-    heroImage: IMG.fieldnote,
-    heroAlt: 'Fieldnote voice notes app on a mobile phone',
-    paragraphs: [
-      'Fieldnote\u2019s core bet was that voice input plus AI summarization could replace typed notes for a specific audience: founders, researchers, and consultants who think better speaking than typing. My job was making the AI feel trustworthy rather than magical or opaque, showing the raw transcript alongside the AI summary rather than hiding one behind the other.',
-      'I designed the entire recording-to-summary flow, including a live waveform state during recording and an editable summary view where users could correct AI output inline. This transparency-first approach became a core differentiator in how Fieldnote positioned itself against competitors that only showed polished AI output.',
-    ],
-    goal: 'A 4.8 star rating across the first 10,000 reviews. Honesty builds trust faster than polish.',
-    stack: 'Figma, ProtoPie, Lottie, Cursor',
-    screenshots: [IMG.pulse, IMG.northbound, IMG.fernweh, IMG.lockstep],
-  },
-  {
-    slug: 'lockstep-team-fitness-challenges',
-    client: 'Lockstep',
-    year: '2024',
-    title: 'Lockstep - Team Fitness Challenges',
-    subtitle:
-      'A social fitness app redesign focused on making group challenges feel competitive without feeling stressful.',
-    heroImage: IMG.lockstep,
-    heroAlt: 'Lockstep fitness challenge app visual',
-    paragraphs: [
-      'Lockstep\u2019s early version had a leaderboard-first design that user interviews revealed was actively discouraging participation, people who weren\u2019t near the top stopped checking the app entirely. I redesigned the core experience around small-group challenges of 4 to 6 people instead of app-wide leaderboards, and added weekly rather than all-time rankings so nobody stayed permanently behind.',
-      'I also rebuilt the check-in flow into a single-tap action from the home screen, since the original required navigating three screens to log a workout. Combined, these changes shifted the app from a top-heavy leaderboard product into something closer to a shared habit tracker.',
-    ],
-    goal: 'Weekly active users jumped 52% after launch. Fitness sticks when it feels like a real team.',
-    stack: 'Figma, Principle, Whimsical, Xcode',
-    screenshots: [IMG.pulse, IMG.northbound, IMG.fernweh, IMG.grain],
+    goal: 'Make market data easier to understand while improving frontend quality, performance, and release confidence.',
+    stack: 'Frontend Development, Interactive Charts, SEO, Jest, Performance',
   },
 ];
 
 export const tools: { group: string; items: string[] }[] = [
-  { group: 'Design & Wireframing', items: ['Figma', 'Galileo AI', 'Motiff'] },
-  { group: 'Prototyping & Motion', items: ['ProtoPie', 'Principle', 'Lottie'] },
-  { group: 'Building & Shipping', items: ['Cursor', 'Xcode', 'GitHub Copilot'] },
+  {
+    group: 'Frontend Engineering',
+    items: ['React', 'Next.js', 'Semantic HTML', 'Performance'],
+  },
+  {
+    group: 'Backend & Systems',
+    items: ['API Design', 'API Integration', 'Systems Design', 'Reliability'],
+  },
+  {
+    group: 'Quality & Delivery',
+    items: ['Testing', 'GitHub', 'CI/CD', 'DevOps'],
+  },
 ];
 
 export const workHistory: Job[] = [
   {
-    company: 'Linear',
-    role: 'Senior Product Designer',
-    period: ['Mar 2023', 'Present'],
+    company: 'Fieldsub',
+    role: 'Software Engineer',
+    period: ['Oct 2025', 'Present'],
     description: [
-      'Led end-to-end product design for core issue tracking experience, used by 100,000+ teams globally.',
-      'Built and shipped a redesigned onboarding flow in 4 days using Figma + Cursor, reducing drop-off by 34%.',
-      'Introduced AI-assisted design QA process, reducing review cycles from 3 days to 4 hours.',
+      'Build and maintain web and mobile application features across frontend and backend systems.',
+      'Design and integrate APIs to support reliable product workflows and application behavior.',
+      'Improve reliability through debugging, performance work, and practical production issue resolution.',
     ],
   },
   {
-    company: 'Revolut',
-    role: 'Product Designer',
-    period: ['Jun 2021', 'Feb 2023'],
+    company: 'Weboard',
+    role: 'Frontend Developer',
+    period: ['Aug 2024', 'May 2025'],
     description: [
-      'Owned product design for the Savings and Investments vertical across iOS and Android.',
-      'Redesigned the mobile payments flow, increasing transaction completion rate by 22% within 60 days of launch.',
-      'Used Perplexity and Claude to synthesize 200+ user interviews into actionable design briefs in hours, not weeks.',
+      'Joined as part of the founding team, building the hotel booking platform from the ground up to production launch within 6 months.',
+      'Integrated payment gateways and booking APIs, ensuring seamless transactions for users across multiple devices.',
+      'Enhanced code quality and testing processes, resulting in a 30% drop in production bug reports.',
+      'Analyzed user behavior with React and Google Analytics to identify bottlenecks, driving a 15% increase in session duration.',
     ],
   },
   {
-    company: 'Pitch',
-    role: 'Lead Product Designer',
-    period: ['Sep 2019', 'May 2021'],
+    company: 'Ezyswap',
+    role: 'Frontend Developer',
+    period: ['Mar 2023', 'Aug 2023'],
     description: [
-      'First designer on the team, responsible for building the design system and core product experience from scratch.',
-      'Designed the end-to-end seller onboarding experience, cutting time-to-first-listing from 14 days to 3.',
-      'Prototyped and validated 3 new product concepts using Maze and Figma in under 2 weeks each.',
+      'Refactored key sections of the frontend codebase, improving code maintainability and performance.',
+      'Developed interactive chart UIs to display real-time crypto asset prices, improving data clarity and trader decision-making.',
+      'Implemented frontend SEO best practices, boosting organic traffic by approximately 30%.',
+      'Introduced unit tests with Jest, achieving 70% test coverage and reducing post-release issues.',
+    ],
+  },
+  {
+    company: 'HNG Internship',
+    role: 'Frontend Developer',
+    period: ['Oct 2022', 'Dec 2022'],
+    description: [
+      'Collaborated with a team of 12 interns to design and launch an MVP in under 8 weeks.',
+      "Developed and maintained the frontend using modern web technologies under a senior developer's mentorship.",
+      'Participated in planning and code reviews via Slack and GitHub to manage dependencies and anticipate changes.',
+      'Contributed to a product that reached approximately 2,000 users within 3 months of launch.',
     ],
   },
 ];
 
 export const aboutParagraphs = [
-  "I'm a mobile app designer with 7 years of experience shaping iOS and Android products used by millions, from early-stage startups to teams shipping at scale. My focus is native feel: interfaces that respect platform conventions, motion that feels inevitable rather than decorative, and flows that hold up under real thumbs on real screens.",
-  "I've led design for consumer, fintech, and health apps, working closely with engineers to ship features that translate cleanly into SwiftUI and Jetpack Compose. I care as much about the App Store listing and onboarding funnel as I do about the core product, since a beautifully designed screen nobody opens twice isn't a win.",
-  "I'm based in Berlin, available for full-time and contract work, and open to remote roles with teams who ship fast and sweat the details.",
+  "I'm a Software Engineer with experience building and maintaining web and mobile applications across frontend and backend systems.",
+  'I started in frontend engineering and have since expanded into backend development, giving me a stronger end-to-end understanding of how products are designed, built, and maintained.',
+  'I enjoy solving practical problems, making thoughtful engineering decisions, and building software that can evolve as products grow.',
 ];
 
 export function projectForSlug(slug: string): Project | undefined {
