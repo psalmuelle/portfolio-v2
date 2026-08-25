@@ -73,17 +73,6 @@ export default function Navbar() {
             <motion.div variants={mobileItem} transition={{ duration: 0.35, delay: 0.18 }}>
               <CopyButton />
             </motion.div>
-            <motion.div
-              className="nav-mobile-social"
-              variants={mobileItem}
-              transition={{ duration: 0.35, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            >
-              {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
-                  {link.label}
-                </a>
-              ))}
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
