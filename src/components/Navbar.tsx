@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'motion/react';
 import CopyButton from './CopyButton';
-import { contactEmail, socialLinks } from '../data';
+import { contactEmail } from '../data';
 
 const mobileItem = {
   hidden: { opacity: 0, y: 18 },
