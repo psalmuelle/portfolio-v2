@@ -19,7 +19,7 @@ export interface Job {
   description: string[];
 }
 
-export const contactEmail = 'hello@erinlesam.com';
+export const contactEmail = 'psalmuelle1@gmail.com';
 
 export const socialLinks: { label: string; href: string }[] = [
   { label: 'X', href: 'https://x.com/erinle_sam' },
