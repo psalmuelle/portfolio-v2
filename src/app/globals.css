@@ -585,6 +585,7 @@ img {
   max-width: 880px;
   margin: 0 auto 72px;
   height: 560px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -655,12 +656,18 @@ img {
 
 .live-link {
   display: block;
+  text-align: center;
+  background-color: rgba(217, 120, 87, 0.1);
+  border-radius: 6px;
+  transition: all 250ms ease-in;
   padding: 12px;
-  border: 1px solid var(--line);
   color: var(--ink);
   font-size: 16px;
   line-height: 26px;
   margin-bottom: 72px;
+}
+.live-link:hover {
+  background-color: rgba(217, 120, 87, 0.2);
 }
 
 .project-back {

@@ -89,14 +89,16 @@ export default async function ProjectPage({
             <p>{project.stack}</p>
           </div>
         </div>
-        <a
-          className="live-link"
-          href="https://www.apple.com/app-store/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          See it live
-        </a>
+        {project.liveLink && (
+          <a
+            className="live-link"
+            href={project.liveLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            See it live
+          </a>
+        )}
       </Reveal>
 
       <div className="project-back">

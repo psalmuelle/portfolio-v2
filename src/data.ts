@@ -9,6 +9,7 @@ export interface Project {
   paragraphs: [string, string];
   goal: string;
   stack: string;
+  liveLink?: string;
 }
 
 export interface Job {
@@ -71,6 +72,7 @@ export const projects: Project[] = [
     ],
     goal: 'Build reliable, maintainable features that support real product workflows across the stack.',
     stack: 'Frontend, Backend, APIs, Performance, Reliability',
+    liveLink: 'https://fieldsub.com',
   },
   {
     slug: 'weboard-hotel-booking-platform',
@@ -103,6 +105,7 @@ export const projects: Project[] = [
     ],
     goal: 'Make market data easier to understand while improving frontend quality, performance, and release confidence.',
     stack: 'Frontend Development, Interactive Charts, SEO, Jest, Performance',
+    liveLink: 'https://ezyswap.ai',
   },
 ];
 
