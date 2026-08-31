@@ -885,10 +885,7 @@ img {
   }
 
   .project-open-icon {
-    top: 12px;
-    right: 12px;
-    width: 48px;
-    height: 48px;
+    display: none;
   }
 
   .tools-grid {
