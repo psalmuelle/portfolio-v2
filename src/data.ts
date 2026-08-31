@@ -42,19 +42,19 @@ const IMG = {
 
 export const projects: Project[] = [
   {
-    slug: 'manyva-product-engineering',
-    client: 'personal project',
-    year: '2025 - Present',
+    slug: 'manyva-ai-video-platform',
+    client: 'Personal Project',
+    year: '2026 - Present',
     title: 'Manyva - Video Marketing Platform',
     subtitle:
-      'Building and maintaining reliable web and mobile application features across frontend and backend systems.',
+      'Started working on manyva as a side project to help solve a problem for founders and small teams.',
     heroImage: IMG.manyva,
-    heroAlt: 'Product engineering interface for fieldsub',
+    heroAlt: 'Manyva.ai, founder\'s goto for marketing videos',
     paragraphs: [
-      'At fieldsub, I work across frontend and backend systems to build, maintain, and improve product features. The work requires practical engineering decisions, reliable implementation, and a strong understanding of how different parts of an application fit together.',
-      'My focus is on software that remains maintainable as products grow: clear code, thoughtful API integration, performance improvements, and dependable debugging when production issues appear.',
+      'Manyva is a video marketing platform I\'m building for founders and lean teams who need a simpler way to create consistent marketing content without a large in-house production setup.',
+      'I\'m taking the product from idea to implementation, shaping the user experience and building the frontend and backend foundations for a focused, approachable workflow. The goal is to make polished video marketing easier to plan, create, and maintain as a company grows.',
     ],
-    goal: 'Build reliable product features that can evolve without becoming harder to maintain.',
+    goal: 'Give founders and small teams a straightforward way to turn ideas into on-brand marketing videos and keep a consistent content rhythm.',
     stack: 'Frontend, Backend, APIs, Debugging, Reliability',
   },
   {
@@ -112,15 +112,23 @@ export const projects: Project[] = [
 export const tools: { group: string; items: string[] }[] = [
   {
     group: 'Frontend Engineering',
-    items: ['React', 'Next.js', 'Semantic HTML', 'Performance'],
+    items: [
+      'JavaScript & TypeScript',
+      'Frontend architecture',
+      'Web fundamentals',
+    ],
   },
   {
     group: 'Backend & Systems',
-    items: ['API Design', 'API Integration', 'Systems Design', 'Reliability'],
+    items: ['APIs & databases', 'Systems Design', 'Security & reliability'],
   },
   {
     group: 'Quality & Delivery',
-    items: ['Testing', 'GitHub', 'CI/CD', 'DevOps'],
+    items: [
+      'Testing & automation',
+      'CI/CD & DevOps',
+      'Monitoring & observability',
+    ],
   },
 ];
 

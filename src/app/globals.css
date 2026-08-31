@@ -337,6 +337,20 @@ img {
   color: var(--muted);
 }
 
+.tool-group:not(:first-child) {
+  position: relative;
+}
+
+.tool-group:not(:first-child)::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -48px;
+  width: 1px;
+  background: var(--line);
+  content: '';
+}
+
 /* ---------- Portfolio grid ---------- */
 .portfolio-grid {
   display: grid;
@@ -683,10 +697,26 @@ img {
 }
 
 .project-details {
+  max-width: 640px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 60px;
+}
+
+.detail:not(:first-child) {
+  position: relative;
+  padding-left: 12px;
+}
+
+.detail:not(:first-child)::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -12px;
+  width: 1px;
+  background: var(--line);
+  content: '';
 }
 
 .detail h4 {
@@ -864,6 +894,15 @@ img {
   .tools-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .tool-group:not(:first-child)::before,
+  .detail:not(:first-child)::before {
+    display: none;
+  }
+
+  .detail:not(:first-child) {
+    padding-left: 0;
   }
 
   .job-head {
