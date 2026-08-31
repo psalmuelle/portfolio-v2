@@ -6,6 +6,8 @@ import Reveal from '@/components/Reveal';
 import Parallax from '@/components/Parallax';
 import { projectForSlug, projects } from '@/data';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://erinlesam.com';
+
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 export const instant = false;
@@ -22,7 +24,31 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = projectForSlug(slug);
   if (!project) return {};
-  return { title: project.title };
+
+  const path = `/portfolio/${project.slug}`;
+  return {
+    title: project.title,
+    description: project.subtitle,
+    alternates: { canonical: path },
+    openGraph: {
+      title: project.title,
+      description: project.subtitle,
+      url: path,
+      type: 'article',
+      images: [
+        {
+          url: new URL(project.heroImage, siteUrl).toString(),
+          alt: project.heroAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.subtitle,
+      images: [new URL(project.heroImage, siteUrl).toString()],
+    },
+  };
 }
 
 export default async function ProjectPage({
@@ -61,6 +87,7 @@ export default async function ProjectPage({
             alt={project.heroAlt}
             width={1056}
             height={672}
+            sizes="(min-width: 1200px) 880px, 100vw"
           />
         </Parallax>
       </Reveal>

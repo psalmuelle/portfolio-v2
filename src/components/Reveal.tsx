@@ -19,8 +19,8 @@ export default function Reveal({ children, className = '', as = 'div', delay = 0
   const visible = prefersReducedMotion || inView;
   const motionProps = {
     className,
-    initial: prefersReducedMotion ? false : { opacity: 0, y: 28 },
-    animate: visible ? { opacity: 1, y: 0 } : undefined,
+    initial: prefersReducedMotion ? false : { opacity: 0, y: 28, filter: 'blur(10px)' },
+    animate: visible ? { opacity: 1, y: 0, filter: 'blur(0px)' } : undefined,
     transition: { duration: 0.9, ease: EASE, delay },
     children,
   };

@@ -21,6 +21,7 @@ export default function Home() {
             alt={avatar.alt}
             width={96}
             height={96}
+            preload
           />
           <h1 className="hero-name">Erinle Samuel</h1>
         </div>
@@ -58,7 +59,7 @@ export default function Home() {
         </div>
       </Reveal>
 
-      <Reveal as="section" className="section">
+      <Reveal as="section" className="section" delay={0.06}>
         <h3 className="section-title">About</h3>
         <div className="about-body">
           {aboutParagraphs.map((p) => (
@@ -67,7 +68,7 @@ export default function Home() {
         </div>
       </Reveal>
 
-      <Reveal as="section" className="section">
+      <Reveal as="section" className="section" delay={0.12}>
         <h3 className="section-title">Tools</h3>
         <div className="tools-grid">
           {tools.map((t) => (
@@ -83,7 +84,7 @@ export default function Home() {
         </div>
       </Reveal>
 
-      <Reveal as="section" className="section">
+      <Reveal as="section" className="section" delay={0.18}>
         <h3 className="section-title">Portfolio</h3>
         <div className="portfolio-grid">
           {projects.map((p) => (
@@ -92,13 +93,21 @@ export default function Home() {
               href={`/portfolio/${p.slug}`}
               key={p.slug}
             >
-              <Image
-                className="project-thumb"
-                src={p.heroImage}
-                alt={p.heroAlt}
-                width={416}
-                height={264}
-              />
+              <div className="project-image-wrap">
+                <Image
+                  className="project-thumb"
+                  src={p.heroImage}
+                  alt={p.heroAlt}
+                  width={416}
+                  height={264}
+                  sizes="(min-width: 1200px) 416px, (min-width: 810px) calc((100vw - 96px) / 2), calc(100vw - 48px)"
+                />
+                <span className="project-open-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19 19 5M8 5h11v11" />
+                  </svg>
+                </span>
+              </div>
               <h4 className="project-title-small">{p.title}</h4>
               <p className="project-desc">{p.subtitle}</p>
               <div className="project-meta">
@@ -111,7 +120,7 @@ export default function Home() {
         </div>
       </Reveal>
 
-      <Reveal as="section" className="section">
+      <Reveal as="section" className="section" delay={0.24}>
         <h3 className="section-title">Work History</h3>
         <div className="jobs">
           {workHistory.map((job) => (

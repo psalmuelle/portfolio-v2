@@ -34,7 +34,7 @@ export const avatar = {
 };
 
 const IMG = {
-  manyva: '/manyva-mockup.jpg',
+  manyva: '/manyva-mockup-cm.png',
   fieldsub: '/fieldsub-mockup.png',
   weboard: '/weboard-mockup.png',
   ezyswap: '/ezyswap-mockup.png',

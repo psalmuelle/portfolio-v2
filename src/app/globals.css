@@ -349,11 +349,61 @@ img {
   display: block;
 }
 
+.project-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
 .project-thumb {
   width: 100%;
   aspect-ratio: 416 / 264;
   object-fit: cover;
   border-radius: 12px;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-open-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--cream);
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(-8px) scale(0.92);
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-open-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.project-card:hover .project-open-icon,
+.project-card:focus-visible .project-open-icon {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-card:hover .project-thumb,
+.project-card:focus-visible .project-thumb {
+  transform: scale(1.025);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 6px;
 }
 
 .project-title-small {
@@ -657,17 +707,19 @@ img {
 .live-link {
   display: block;
   text-align: center;
-  background-color: rgba(217, 120, 87, 0.1);
-  border-radius: 6px;
-  transition: all 250ms ease-in;
+  background-color: #f2ede4;
+  border-radius: 12px;
   padding: 12px;
+  border: 1px solid transparent;
+  transition: all ease-in 250ms;
   color: var(--ink);
   font-size: 16px;
+  font-weight: 600;
   line-height: 26px;
   margin-bottom: 72px;
 }
 .live-link:hover {
-  background-color: rgba(217, 120, 87, 0.2);
+  border: 1px solid var(--muted)
 }
 
 .project-back {
@@ -802,6 +854,13 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .project-open-icon {
+    top: 12px;
+    right: 12px;
+    width: 48px;
+    height: 48px;
+  }
+
   .tools-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -835,5 +894,12 @@ img {
   .project-details {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-thumb,
+  .project-open-icon {
+    transition: none;
   }
 }
